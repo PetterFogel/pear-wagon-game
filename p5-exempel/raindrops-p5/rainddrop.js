@@ -52,7 +52,7 @@ class Drop {
     respawn() {
         if (this.y > 500){
             this.y = 0;
-            this.x = random(400);
+            this.x = random(700);
             }  
     }
 }

@@ -1,20 +1,20 @@
-function setup() {
-    const canvas = createCanvas(700, 500);
-    const x = (windowWidth - width) / 2;
-    const y = (windowHeight - height) / 2;
-    canvas.position(x, y);
+// function setup() {
+//     const canvas = createCanvas(700, 500);
+//     const x = (windowWidth - width) / 2;
+//     const y = (windowHeight - height) / 2;
+//     canvas.position(x, y);
     
-    drop = new Drop(random(0, 700), 20, 20);
-    drop2 = new Drop(random(0, 700), 20, 20);
-}
+//     drop = new Drop(random(0, 700), 20, 20);
+//     drop2 = new Drop(random(0, 700), 20, 20);
+// }
 
-function draw() {
-    background(200, 200, 200);
+// function draw() {
+//     background(200, 200, 200);
 
-    rainDrops();
-    drop.respawn();
-    drop2.respawn();
-}
+//     rainDrops();
+//     drop.respawn();
+//     drop2.respawn();
+// }
 
 function rainDrops() {
     getshape();
@@ -50,9 +50,15 @@ class Drop {
     }
 
     respawn() {
-        if (this.y > 500){
-            this.y = 0;
-            this.x = random(400);
-            }  
+       
+    if (this.y > innerHeight){
+        this.y = 0;
+        this.x = random(innerWidth);
+    }  
+       
+        // if (this.y > 500){
+        //     this.y = 0;
+        //     this.x = random(400);
+        //     }  
     }
 }

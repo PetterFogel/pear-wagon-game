@@ -1,15 +1,29 @@
 let Player;
 
 function setup() {
-    createCanvas(innerWidth, innerHeight);
-    Player = new player();
-     
-  }
+  const canvas = createCanvas(innerWidth, innerHeight);
+
+  const x = (windowWidth - width) / 2;
+  const y = (windowHeight - height) / 2;
+  canvas.position(x, y);
+
+  Player = new player();
+
+
+  drop = new Drop(random(0, 700), 20, 20);
+  drop2 = new Drop(random(0, 700), 20, 20);
+
+   
+}
 
 
 
 function draw() {
-  Player.display();
+Player.display();
+
+rainDrops();
+drop.respawn();
+drop2.respawn();
 }
 
 

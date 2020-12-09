@@ -12,6 +12,8 @@ function draw() {
     background(200, 200, 200);
 
     rainDrops();
+    drop.respawn();
+    drop2.respawn();
 }
 
 function rainDrops() {
@@ -45,5 +47,12 @@ class Drop {
     move() {
         this.y = this.y + 6;
         drop2.y = drop2.y + 2;
+    }
+
+    respawn() {
+        if (this.y > 500){
+            this.y = 0;
+            this.x = random(400);
+            }  
     }
 }

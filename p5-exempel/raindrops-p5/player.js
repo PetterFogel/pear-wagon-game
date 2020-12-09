@@ -44,6 +44,7 @@ function player() {
       
          rectMode(CENTER)
           fill(5)
+          noCursor()
           rect(mouseX, innerHeight -this.y, 100, 50)
     }
   }

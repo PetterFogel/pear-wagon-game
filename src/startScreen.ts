@@ -8,39 +8,34 @@ class StartScreen {
         this.pearWagon = pearWagon;
         
         
+        
     }
 
     update() {
-        console.log("update:");
-        console.log(this.button);
-        console.log(typeof(this.button));
-        if (typeof(this.button) == "undefined"){
-            console.log("is undefined!");
-        } else if (this.button.mouseIsPressed) {
-            this.pearWagon.gameState = "play";
-        }
-
-        // if (this.button.mousePressed) {
-        //     console.log("clicked!")
-        //     this.pearWagon.gameState = "play";
-        // }
+        if (typeof(this.button) != "undefined"){
+            this.button.mousePressed(() => this.clicked(this.pearWagon))
+        } 
     }
     draw() {
         this.button = createButton("play");
         this.button.position(innerWidth / 2, innerHeight / 2);
-        this.button.mousePressed(this.update)
         this.button.size(200, 100)
-        console.log("draw:");
-        console.log(this.button);
-        noLoop();
+        this.update();
+        //noLoop();
         
         background(150, 0, 0);
-        
-
     }
-    
 
+    clicked(pw: any){
+        // console.log("clicked!")
+        // console.log(pw.gameState);
+        pw.gameState = "play";
+    }
 }
+
+
+
+
 
 
 // https://p5js.org/reference/#/p5/createButton

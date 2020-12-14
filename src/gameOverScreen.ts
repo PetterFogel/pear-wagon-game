@@ -5,9 +5,9 @@ class GameOverScreen {
         this.pearWagon = pearWagon;
     }
     update() {
-        if (mouseIsPressed) {
-            this.pearWagon.gameState = "start";
-        }
+        // if (mouseIsPressed) {
+        //     this.pearWagon.gameState = "start";
+        // }
     }
     draw() {
         background("yellow");

@@ -6,19 +6,18 @@ class PlayScreen {
     }
     update() {
         
-        if (mouseIsPressed) {
-            this.pearWagon.gameState = "over";
-        }
+        // if (mouseIsPressed) {
+        //     this.pearWagon.gameState = "over";
+        // }
     }
     draw() {
         background("blue");
-
-        // textSize(32);
-        // text('playnow', 10, 30);
-        // fill(0, 102, 153);
-        // text('playnow', 10, 60);
-        // fill(0, 102, 153, 51);
-        // text('playnow', 10, 90);
+        textSize(32);
+        text('playnow', 10, 30);
+        fill(0, 102, 153);
+        text('playnow', 10, 60);
+        fill(0, 102, 153, 51);
+        text('playnow', 10, 90);
 
     }
 }

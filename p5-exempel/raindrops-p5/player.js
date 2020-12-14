@@ -21,6 +21,8 @@ function setup() {
 function draw() {
 Player.display();
 
+score();
+
 rainDrops();
 drop.respawn();
 drop2.respawn();

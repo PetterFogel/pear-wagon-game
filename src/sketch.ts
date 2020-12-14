@@ -43,19 +43,21 @@ function draw() {
 
 }
 interface IGameState {
-    gameState: "start" | "over" | "play";
+    gameState: "start" | "over" | "play" | "how";
 }
 class PearWagon implements IGameState {
     private startScreen: StartScreen;
     private playScreen: PlayScreen;
     private gameOverScreen: GameOverScreen;
+    private howToPlayScreen: HowToPlayScreen;
 
-    public gameState: "start" | "over" | "play";
+    public gameState: "start" | "over" | "play" | "how";
 
     constructor() {
         this.startScreen = new StartScreen(this);
         this.playScreen = new PlayScreen(this);
         this.gameOverScreen = new GameOverScreen(this);
+        this.howToPlayScreen = new HowToPlayScreen(this);
         this.gameState = "start";
     }
 
@@ -74,6 +76,10 @@ class PearWagon implements IGameState {
                 this.gameOverScreen.update();
                 break;
             }
+            case "how": {
+                this.howToPlayScreen.update();
+                break;
+            }
         }
     }
 
@@ -89,6 +95,10 @@ class PearWagon implements IGameState {
             }
             case "over": {
                 this.gameOverScreen.draw();
+                break;
+            }
+            case "how": {
+                this.howToPlayScreen.draw();
                 break;
             }
         }

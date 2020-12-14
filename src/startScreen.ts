@@ -13,7 +13,7 @@ class StartScreen {
 
     update() {
         if (typeof(this.button) != "undefined"){
-            this.button.mousePressed(() => this.clicked(this.pearWagon))
+            this.button.mousePressed(() => this.playGame(this.pearWagon))
         } 
     }
     draw() {
@@ -26,10 +26,10 @@ class StartScreen {
         background(150, 0, 0);
     }
 
-    clicked(pw: any){
+    playGame(pearWagon: IGameState){
         // console.log("clicked!")
         // console.log(pw.gameState);
-        pw.gameState = "play";
+        pearWagon.gameState = "play";
     }
 }
 

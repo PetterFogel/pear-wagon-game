@@ -1,5 +1,7 @@
 //---- GLOBAL VARIABLES ----//
 // let game: Game;
+let pearWagon: PearWagon;
+
 
 /**
  * Built in preload function in P5
@@ -22,8 +24,9 @@ function setup() {
     createCanvas(windowWidth, windowHeight);
     frameRate(60);
     // noCursor();
-    
+
     // game = new Game();
+    pearWagon = new PearWagon();
 }
 
 /**
@@ -32,15 +35,67 @@ function setup() {
  * you created in the setup function above
  */
 function draw() {
-    background('blue');
-    fill('green');
-    stroke('white');
-    strokeWeight(10);
-    circle(width * .5, height * .5, width * 0.2);
-
+   
+    pearWagon.update();
+    pearWagon.draw();
     // game.update();
     // game.draw();
+
 }
+interface IGameState {
+    gameState: "start" | "over" | "play";
+}
+class PearWagon implements IGameState {
+    private startScreen: StartScreen;
+    private playScreen: PlayScreen;
+    private gameOverScreen: GameOverScreen;
+
+    public gameState: "start" | "over" | "play";
+
+    constructor() {
+        this.startScreen = new StartScreen(this);
+        this.playScreen = new PlayScreen(this);
+        this.gameOverScreen = new GameOverScreen(this);
+        this.gameState = "start";
+    }
+
+    public update() {
+        switch (this.gameState) {
+            case "start": {
+                this.startScreen.update();
+                break;
+            }
+            case "play": {
+                this.playScreen.update();
+                break;
+            }
+            case "over": {
+                this.gameOverScreen.update();
+                break;
+            }
+        }
+    }
+
+    public draw() {
+        switch (this.gameState) {
+            case "start": {
+                this.startScreen.draw();
+                break;
+            }
+            case "play": {
+                this.playScreen.draw();
+                break;
+            }
+            case "over": {
+                this.gameOverScreen.draw();
+                break;
+            }
+        }
+    }
+}
+
+
+
 
 
 /**

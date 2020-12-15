@@ -10,22 +10,21 @@ class StartScreen {
     
     constructor(pearWagon: IGameState, playButton: Button, howToButton: Button) {
         this.pearWagon = pearWagon;
-        this.playButton = playButton;
     }
     
     update() {
-        if (typeof(this.playButton) != "undefined"){
-                this.playButton.mousePressed(() => this.buttonClicked(this.pearWagon, "play"))
-            }
-            if (typeof(this.howToPlayButton) != "undefined"){
-                    this.howToPlayButton.mousePressed(() => this.buttonClicked(this.pearWagon, "how"))
-                }
+        // if (typeof(this.playButton) != "undefined"){
+        //         this.playButton.mousePressed(() => this.buttonClicked(this.pearWagon, "play"))
+        //     }
+        //     if (typeof(this.howToPlayButton) != "undefined"){
+        //             this.howToPlayButton.mousePressed(() => this.buttonClicked(this.pearWagon, "how"))
+        //         }
                 
         }
     draw() {
         background(150, 0, 0);
-        this.playButton = new Button(innerWidth / 2 - 150, innerHeight / 2, 90, 75, "limegreen")
-        this.howToButton = new Button(innerWidth / 2 + 50, innerHeight / 2, 90, 75, "limegreen")
+        this.playButton = new Button(innerWidth / 2 - 150, innerHeight / 2, 90, 75, "limegreen");
+        this.howToButton = new Button(innerWidth / 2 + 50, innerHeight / 2, 90, 75, "limegreen");
                 
         this.playButton.draw();
         this.howToButton.draw();

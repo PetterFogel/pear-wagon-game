@@ -15,6 +15,7 @@ class StartScreen {
     }
     
     update() {
+      
                 
     }
     draw() {

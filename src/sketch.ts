@@ -29,6 +29,35 @@ function setup() {
     pearWagon = new PearWagon();
 }
 
+function mousePressed() {
+    // pearWagon.buttons = [];
+    // pearWagon.buttons.push(pearWagon.startScreen.playButton);
+    // pearWagon.buttons.push(pearWagon.startScreen.howToButton);
+
+    // for(let i = 0; i < pearWagon.buttons.length; i++){
+    //     if (i === 0){
+    //         pearWagon.buttons[i].clicked(pearWagon.startScreen, "play");
+    //     } else {
+    //         pearWagon.buttons[i].clicked("how");
+    //     }
+    // }
+
+    switch(pearWagon.gameState) {
+        case "start":
+            pearWagon.startScreen.clicked();
+            break;
+        case "over":
+            // code
+            break;
+        case "play":
+            // code
+            break;
+        case "how":
+            // code
+            break;
+    }
+}
+
 /**
  * Built in draw function in P5
  * This is a good place to call public methods of the object
@@ -46,10 +75,11 @@ interface IGameState {
     gameState: "start" | "over" | "play" | "how";
 }
 class PearWagon implements IGameState {
-    private startScreen: StartScreen;
+    public startScreen: StartScreen;
     private playScreen: PlayScreen;
     private gameOverScreen: GameOverScreen;
     private howToPlayScreen: HowToPlayScreen;
+    
 
     public gameState: "start" | "over" | "play" | "how";
 

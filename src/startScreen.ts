@@ -4,14 +4,16 @@ class StartScreen {
     private pearWagon: IGameState
     private playButton: Button 
     private howToButton: Button
-    // private playButton: any
-    // private howToPlayButton: any
+    private buttons:Button[]
     
     
     constructor(pearWagon: IGameState) {
         this.pearWagon = pearWagon;
         this.playButton = new Button(0, 0, 300, 150, "limegreen");
         this.howToButton = new Button(0, 0, 300, 150, "limegreen");
+        this.buttons = [];
+        this.buttons.push(this.playButton);
+        this.buttons.push(this.howToButton);
     }
     
     update() {
@@ -28,8 +30,21 @@ class StartScreen {
         this.howToButton.draw(); 
     }
 
-    buttonClicked(){
-        // this.pearWagon.gameState = mainState;
+    clicked(){
+        for(let i = 0; i < this.buttons.length; i++){
+            if (i === 0){
+                if ((mouseX > this.buttons[0].x) && (mouseX < this.buttons[0].x + 300) &&
+                (mouseY > this.buttons[0].y) && (mouseY < this.buttons[0].y + 150)) {
+                  this.pearWagon.gameState = "play";
+                }
+            } else {
+                if ((mouseX > this.buttons[1].x) && (mouseX < this.buttons[1].x + 300) &&
+                (mouseY > this.buttons[1].y) && (mouseY < this.buttons[1].y + 150)) {
+                  pearWagon.gameState = "how";
+                }
+            }
+        }
+        
     }
 }
 

@@ -19,6 +19,17 @@ class HowToPlayScreen {
         strokeWeight(2);
         line(innerWidth / 2 + 220, innerHeight / 2 -100, innerWidth / 2 + 220, innerHeight / 2 - 35);
         line(innerWidth / 2 + 310, innerHeight / 2 -100, innerWidth / 2 + 310, innerHeight / 2 + 10);
+        
+        strokeWeight(5);
+        line(innerWidth / 2 + 100, innerHeight / 2 + 190, innerWidth / 2 + 260, innerHeight / 2 + 190);
+        line(innerWidth / 2 + 100, innerHeight / 2 + 190, innerWidth / 2 + 140, innerHeight / 2 + 150);
+        line(innerWidth / 2 + 100, innerHeight / 2 + 190, innerWidth / 2 + 140, innerHeight / 2 + 150);
+        strokeWeight(1);
+        line(innerWidth / 2 + 400, innerHeight / 2 + 190, innerWidth / 2 + 480, innerHeight / 2 + + 190);
+        
+        line(innerWidth / 2 + 460, innerHeight / 2 + 210, innerWidth / 2 + 480, innerHeight / 2 + 190);
+        line(innerWidth / 2 + 460, innerHeight / 2 + 190, innerWidth / 2 + 480, innerHeight / 2 + 210);
+        // line(innerWidth / 2 + 400, innerHeight / 2 + 190, innerWidth / 2 + 480, innerHeight / 2 + + 190);
 
         textSize(22);
         text('Move left', innerWidth / 2 + 170, innerHeight / 2 - 15)

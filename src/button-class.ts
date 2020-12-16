@@ -1,6 +1,6 @@
 class Button {
-    private x: number
-    private y: number
+    public x: number
+    public y: number
     private w: number
     private h: number
     private color: string
@@ -20,5 +20,3 @@ class Button {
         rect(this.x, this.y, this.w, this.h);
     }
 }
-
-let button = new Button(30, 20, 70, 50, "red");

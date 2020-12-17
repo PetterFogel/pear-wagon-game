@@ -5,47 +5,64 @@ class GameOverScreen {
 
     constructor(pearWagon: IGameState) {
         this.pearWagon = pearWagon;
-        this.playAgain = new Button(350, 640, 300, 150,  "limegreen");
+        this.playAgain = new Button(innerWidth / 2, innerHeight / 2, 300, 150,  "limegreen");
     }
     update() {
-        // if (mouseIsPressed) {
-        //     this.pearWagon.gameState = "start";
-        // }
+        this.playAgain.x = innerWidth / 2 - 150;
+        this.playAgain.y = innerHeight / 2 + 165;
+        
     }
     draw() {
         background(0,191,255);
+
+        //red and white square in center
         strokeWeight(4);
-        stroke(0, 0, 0);
-        rect(150, 150, 700, 700, 30);
+        stroke(0, 0, 0);       
+        rectMode(CENTER); 
+        rect(innerWidth / 2, innerHeight / 2, 700, 700, 30);
         fill(255, 255, 255);
-        rect(325, 340, 350, 250, 30);
-        this.playAgain.draw();
+        rect(innerWidth / 2, innerHeight / 2, 350, 250, 30);
+
+        //play button
+        rectMode(CORNER);
+        this.playAgain.draw(); 
         noStroke();
         fill(0,191,255);
-        textSize(40);
-        text('Your score:', 400, 420);
+
+        //Highscore
+        textSize(45);
+        textAlign(CENTER);
+        text('Your score', innerWidth / 2, innerHeight / 2 - 700 / 9.5 );
         fill('black');
-        textSize(60);
-        text('156', 440, 500);
-        fill('red');
-        textSize(30);
-        text('p', 550, 500)
+
+        //displays score points
+        textSize(70);
+        textAlign(CENTER);
+        text('156', innerWidth / 2, innerHeight / 2 - 30 / 2.5);
         fill('black');
+
+        //button text
         strokeWeight(1.5);
         textSize(40);
-        text('Play Again', 400, 725);
+        textAlign(CENTER);
+        text('Play Again', innerWidth / 2, innerHeight / 2 + 550 / 2.5);
+
+        //game over title text
         textSize(80);
-        text('Game Over',290, 270);
+        textAlign(CENTER, TOP);
+        text('Game Over',innerWidth / 2, innerHeight / 2 - 700 / 2.5);
         fill('red');
+
 
     }
     clicked(){
-                if ((mouseX > this.playAgain.x) && (mouseX < this.playAgain.x + 300) &&
-                (mouseY > this.playAgain.y) && (mouseY < this.playAgain.y + 150)) {
-                  this.pearWagon.gameState = "start";
-                }
-                
+            //returns user to menu
+            if ((mouseX > this.playAgain.x) && (mouseX < this.playAgain.x + 300) &&
+                (mouseY > this.playAgain.y) && (mouseY < this.playAgain.y  + 150)) {  
+                    this.pearWagon.gameState = "start";                  
             }
+                
+        }
         
         
     

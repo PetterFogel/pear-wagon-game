@@ -4,6 +4,7 @@ class Button {
     private w: number
     private h: number
     private color: string
+    //private br: number; //border-radius
 
     constructor(x: number, y: number, w: number, h: number, color: string) {
         this.x = x
@@ -16,8 +17,8 @@ class Button {
 
     }
     draw() {
+        
         fill(this.color);
-
         if ((mouseX > this.x) && (mouseX < this.x + 300) &&
         (mouseY > this.y) && (mouseY < this.y + 150)) {
         // mousePressed();
@@ -25,6 +26,7 @@ class Button {
         fill(this.color);
       }
         rect(this.x, this.y, this.w, this.h);
+        
     }
     clicked(gameState: IGameState, stateSwitch: IGameState){
 

@@ -29,7 +29,7 @@ class HowToPlayScreen {
         this.menuButton.draw(); 
         
         imageMode(CENTER)
-        image(img, centerX + 100, centerY -220, 900, 500);
+        image(img, centerX + 100, centerY -220, width / 100 * 50);
         imageMode(CORNER)
         image(img2, centerX + 300, centerY, 300, 400);
         
@@ -51,6 +51,7 @@ class HowToPlayScreen {
         line(centerX + 565, centerY + 200, centerX + 580, centerY + 190);
         line(centerX + 565, centerY + 180, centerX + 580, centerY + 190);
     
+        // textSize(width / 100 * 3);
         textSize(22);
         // Keyboard text
         fill(255);

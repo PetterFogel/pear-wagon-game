@@ -4,7 +4,7 @@ class HowToPlayScreen {
 
     constructor(pearWagon: IGameState) {
         this.pearWagon = pearWagon;
-        this.menuButton = new Button(0, 0, 150, 75, color(9, 232, 18));
+        this.menuButton = new Button(0, 0, 150, 75, "rgb(9, 232, 18)");
 
     }
     update() {
@@ -22,68 +22,68 @@ class HowToPlayScreen {
         // this.menuButton.x = centerX - 75
         // this.menuButton.y = centerY - 50
 
-        this.menuButton.x = centerX - 520
-        this.menuButton.y = centerY - 270
+        this.menuButton.x = centerX - 450
+        this.menuButton.y = centerY - 170
         
         strokeWeight(1);
         this.menuButton.draw(); 
         
         imageMode(CENTER)
-        image(img, centerX + 100, centerY -220, width / 100 * 50);
+        image(img, centerX + 100, centerY -140, 700, 350);
         imageMode(CORNER)
-        image(img2, centerX + 300, centerY, 300, 400);
+        image(img2, centerX + 300, centerY, 200, 300);
         
         
         // Keyboard lines
         strokeWeight(2);
-        line(centerX + 347, centerY -100, centerX + 347, centerY - 35);
-        line(centerX + 449, centerY -100, centerX + 449, centerY + 10);
+        line(centerX + 291, centerY -60, centerX + 291, centerY);
+        line(centerX + 372, centerY -60, centerX + 372, centerY + 20);
 
-        // Mouse left
+        // Mouse left arrow
         strokeWeight(2);
-        line(centerX + 320, centerY + 190, centerX + 400, centerY + + 190);      
-        line(centerX + 335, centerY + 200, centerX + 320, centerY + 190);
-        line(centerX + 335, centerY + 180, centerX + 320, centerY + 190);
+        line(centerX + 220, centerY + 150, centerX + 350, centerY + 150);      
+        line(centerX + 235, centerY + 160, centerX + 220, centerY + 150);
+        line(centerX + 235, centerY + 140, centerX + 220, centerY + 150);
 
-        // Mouse right
+        // Mouse right arrow
         strokeWeight(2);
-        line(centerX + 500, centerY + 190, centerX + 580, centerY + 190);      
-        line(centerX + 565, centerY + 200, centerX + 580, centerY + 190);
-        line(centerX + 565, centerY + 180, centerX + 580, centerY + 190);
+        line(centerX + 450, centerY + 150, centerX + 580, centerY + 150);      
+        line(centerX + 565, centerY + 160, centerX + 580, centerY + 150);
+        line(centerX + 565, centerY + 140, centerX + 580, centerY + 150);
     
         // textSize(width / 100 * 3);
-        textSize(22);
+        textSize(18);
         // Keyboard text
         fill(255);
-        text('Move left', centerX + 300, centerY - 15)
+        text('Move left', centerX + 250, centerY + 15);
         fill(255);
-        text('Move right', centerX + 400, centerY + 30)
+        text('Move right', centerX + 330, centerY + 36);
         // Mouse text
         fill(255);
-        text('Move left', centerX + 270, centerY + 160)
+        text('Move left', centerX + 260, centerY + 120)
         fill(255);
-        text('Move right', centerX + 535, centerY + 160)
+        text('Move right', centerX + 470, centerY + 120)
         // Back to start, button-text
         fill(0);
-        text('Back to start', centerX - 510, centerY - 225)
+        text('Back to start', centerX - 425, centerY - 125)
         // Circles
         fill('green')
         ellipse(centerX -400, centerY, 50);
         fill('brown')
-        ellipse(centerX -400, centerY + 90, 50);
+        ellipse(centerX -400, centerY + 60, 50);
         fill('black')
-        ellipse(centerX -400, centerY + 180, 50);
+        ellipse(centerX -400, centerY + 120, 50);
         fill('yellow')
-        ellipse(centerX -400, centerY + 270, 50);
+        ellipse(centerX -400, centerY + 180, 50);
         fill('hotpink')
-        ellipse(centerX -400, centerY + 360, 50);
+        ellipse(centerX -400, centerY + 240, 50);
         // Object text
         fill(0);
         text('Green Pear = Gives you points', centerX - 350, centerY + 5)
-        text('Rotten Pear = Your hp decreases', centerX - 350, centerY + 95)
-        text('Bomb = Instant game over', centerX - 350, centerY + 190)
-        text('Star = Double points for 5 seconds', centerX - 350, centerY + 275)
-        text('Heart = Increases your hp', centerX - 350, centerY + 370)
+        text('Rotten Pear = Your hp decreases', centerX - 350, centerY + 65)
+        text('Bomb = Instant game over', centerX - 350, centerY + 125)
+        text('Star = Double points for 5 seconds', centerX - 350, centerY + 185)
+        text('Heart = Increases your hp', centerX - 350, centerY + 245)
     }
 
     clicked(){

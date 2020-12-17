@@ -1,8 +1,11 @@
 class HowToPlayScreen {
     private pearWagon: IGameState
+    private menuButton: Button
 
     constructor(pearWagon: IGameState) {
         this.pearWagon = pearWagon;
+        this.menuButton = new Button(0, 0, 150, 75, color(9, 232, 18));
+
     }
     update() {
         // if (mouseIsPressed) {
@@ -10,47 +13,84 @@ class HowToPlayScreen {
         // }
     }
     draw() {
-        // clear();
-        background(150, 0, 0);
-        imageMode(CENTER)
-        image(img, innerWidth / 2, innerHeight / 2 -220, 800, 500);
-        imageMode(CORNER)
-        image(img2, innerWidth / 2 + 200, innerHeight / 2, 300, 400);
-        strokeWeight(2);
-        line(innerWidth / 2 + 220, innerHeight / 2 -100, innerWidth / 2 + 220, innerHeight / 2 - 35);
-        line(innerWidth / 2 + 310, innerHeight / 2 -100, innerWidth / 2 + 310, innerHeight / 2 + 10);
+        clear();
+        background(239, 35, 35);
+
+        let centerX = innerWidth / 2;
+        let centerY = innerHeight / 2;
+                
+        // this.menuButton.x = centerX - 75
+        // this.menuButton.y = centerY - 50
+
+        this.menuButton.x = centerX - 520
+        this.menuButton.y = centerY - 270
         
-        strokeWeight(5);
-        line(innerWidth / 2 + 100, innerHeight / 2 + 190, innerWidth / 2 + 260, innerHeight / 2 + 190);
-        line(innerWidth / 2 + 100, innerHeight / 2 + 190, innerWidth / 2 + 140, innerHeight / 2 + 150);
-        line(innerWidth / 2 + 100, innerHeight / 2 + 190, innerWidth / 2 + 140, innerHeight / 2 + 150);
         strokeWeight(1);
-        line(innerWidth / 2 + 400, innerHeight / 2 + 190, innerWidth / 2 + 480, innerHeight / 2 + + 190);
+        this.menuButton.draw(); 
         
-        line(innerWidth / 2 + 460, innerHeight / 2 + 210, innerWidth / 2 + 480, innerHeight / 2 + 190);
-        line(innerWidth / 2 + 460, innerHeight / 2 + 190, innerWidth / 2 + 480, innerHeight / 2 + 210);
-        // line(innerWidth / 2 + 400, innerHeight / 2 + 190, innerWidth / 2 + 480, innerHeight / 2 + + 190);
+        imageMode(CENTER)
+        image(img, centerX + 100, centerY -220, 900, 500);
+        imageMode(CORNER)
+        image(img2, centerX + 300, centerY, 300, 400);
+        
+        
+        // Keyboard lines
+        strokeWeight(2);
+        line(centerX + 347, centerY -100, centerX + 347, centerY - 35);
+        line(centerX + 449, centerY -100, centerX + 449, centerY + 10);
 
+        // Mouse left
+        strokeWeight(2);
+        line(centerX + 320, centerY + 190, centerX + 400, centerY + + 190);      
+        line(centerX + 335, centerY + 200, centerX + 320, centerY + 190);
+        line(centerX + 335, centerY + 180, centerX + 320, centerY + 190);
+
+        // Mouse right
+        strokeWeight(2);
+        line(centerX + 500, centerY + 190, centerX + 580, centerY + 190);      
+        line(centerX + 565, centerY + 200, centerX + 580, centerY + 190);
+        line(centerX + 565, centerY + 180, centerX + 580, centerY + 190);
+    
         textSize(22);
-        text('Move left', innerWidth / 2 + 170, innerHeight / 2 - 15)
-        fill(220);
-        text('Move right', innerWidth / 2 + 260, innerHeight / 2 + 30)
-        fill(220);
+        // Keyboard text
+        fill(255);
+        text('Move left', centerX + 300, centerY - 15)
+        fill(255);
+        text('Move right', centerX + 400, centerY + 30)
+        // Mouse text
+        fill(255);
+        text('Move left', centerX + 270, centerY + 160)
+        fill(255);
+        text('Move right', centerX + 535, centerY + 160)
+        // Back to start, button-text
+        fill(0);
+        text('Back to start', centerX - 510, centerY - 225)
+        // Circles
+        fill('green')
+        ellipse(centerX -400, centerY, 50);
+        fill('brown')
+        ellipse(centerX -400, centerY + 90, 50);
+        fill('black')
+        ellipse(centerX -400, centerY + 180, 50);
+        fill('yellow')
+        ellipse(centerX -400, centerY + 270, 50);
+        fill('hotpink')
+        ellipse(centerX -400, centerY + 360, 50);
+        // Object text
+        fill(0);
+        text('Green Pear = Gives you points', centerX - 350, centerY + 5)
+        text('Rotten Pear = Your hp decreases', centerX - 350, centerY + 95)
+        text('Bomb = Instant game over', centerX - 350, centerY + 190)
+        text('Star = Double points for 5 seconds', centerX - 350, centerY + 275)
+        text('Heart = Increases your hp', centerX - 350, centerY + 370)
+    }
 
+    clicked(){
 
-        // line(1000, 800, 1200, 700);
+        if ((mouseX > this.menuButton.x) && (mouseX < this.menuButton.x + 150) &&
+        (mouseY > this.menuButton.y) && (mouseY < this.menuButton.y + 75)) {
+          this.pearWagon.gameState = "start";
 
-        // line(900, 400, 50, 50);
-        
-        // this.menuButton.draw(); 
-
-
-        
-        // textSize(32);
-        // text('playnow', 10, 30);
-        // fill(0, 102, 153);
-        // text('playnow', 10, 60);
-        // fill(0, 102, 153, 51);
-        // text('playnow', 10, 90);
+        }
     }
 }

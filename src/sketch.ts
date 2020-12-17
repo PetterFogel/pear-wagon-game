@@ -60,7 +60,7 @@ function mousePressed() {
             // code
             break;
         case "how":
-            // code
+            pearWagon.howToPlayScreen.clicked();
             break;
     }
 }
@@ -85,7 +85,7 @@ class PearWagon implements IGameState {
     public startScreen: StartScreen;
     private playScreen: PlayScreen;
     private gameOverScreen: GameOverScreen;
-    private howToPlayScreen: HowToPlayScreen;
+    public howToPlayScreen: HowToPlayScreen;
     
 
     public gameState: "start" | "over" | "play" | "how";

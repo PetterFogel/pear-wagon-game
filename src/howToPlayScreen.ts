@@ -4,7 +4,7 @@ class HowToPlayScreen {
 
     constructor(pearWagon: IGameState) {
         this.pearWagon = pearWagon;
-        this.menuButton = new Button(0, 0, 150, 75, "rgb(9, 232, 18)");
+        this.menuButton = new Button(0, 0, 300, 150, "rgb(9, 232, 18)");
 
     }
     update() {
@@ -23,8 +23,8 @@ class HowToPlayScreen {
         // this.menuButton.x = centerX - 75
         // this.menuButton.y = centerY - 50
 
-        this.menuButton.x = centerX - 450
-        this.menuButton.y = centerY - 170
+        this.menuButton.x = centerX - 550
+        this.menuButton.y = centerY - 230
         
         strokeWeight(1);
         this.menuButton.draw(); 
@@ -64,9 +64,6 @@ class HowToPlayScreen {
         text('Move left', centerX + 260, centerY + 120)
         fill(255);
         text('Move right', centerX + 470, centerY + 120)
-        // Back to start, button-text
-        fill(0);
-        text('Back to start', centerX - 425, centerY - 125)
         // Circles
         fill('green')
         ellipse(centerX -400, centerY, 50);
@@ -85,6 +82,13 @@ class HowToPlayScreen {
         text('Bomb = Instant game over', centerX - 350, centerY + 125)
         text('Star = Double points for 5 seconds', centerX - 350, centerY + 185)
         text('Heart = Increases your hp', centerX - 350, centerY + 245)
+        // Back to start, button-text
+        textSize(40);
+        strokeWeight(3);
+        stroke(1);
+        textStyle("italic")
+        fill(255);
+        text('Back to start', centerX - 510, centerY - 145)
         pop();
     }
 }

@@ -38,7 +38,7 @@ class Button {
   draw() {
     push();
     if (this.hover) {
-      fill("blue");
+      fill("darkgreen");
     } else {
       fill(this.color);
     }

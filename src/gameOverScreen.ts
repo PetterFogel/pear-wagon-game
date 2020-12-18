@@ -1,17 +1,69 @@
+
 class GameOverScreen {
-    private pearWagon: IGameState
+    private pearWagon: IGameState;
+    private playAgain: Button;
 
     constructor(pearWagon: IGameState) {
         this.pearWagon = pearWagon;
+        this.playAgain = new Button(innerWidth / 2, innerHeight / 2, 300, 150,  "limegreen");
     }
     update() {
-        // if (mouseIsPressed) {
-        //     this.pearWagon.gameState = "start";
-        // }
+        this.playAgain.x = innerWidth / 2 - 150;
+        this.playAgain.y = innerHeight / 2 + 165;
+        
     }
     draw() {
-        background("yellow");
- 
+        background(0,191,255);
+
+        //red and white square in center
+        strokeWeight(4);
+        stroke(0, 0, 0);       
+        rectMode(CENTER); 
+        rect(innerWidth / 2, innerHeight / 2, 700, 700, 30);
+        fill(255, 255, 255);
+        rect(innerWidth / 2, innerHeight / 2, 350, 250, 30);
+
+        //play button
+        rectMode(CORNER);
+        this.playAgain.draw(); 
+        noStroke();
+        fill(0,191,255);
+
+        //Highscore
+        textSize(45);
+        textAlign(CENTER);
+        text('Your score', innerWidth / 2, innerHeight / 2 - 700 / 9.5 );
+        fill('black');
+
+        //displays score points
+        textSize(70);
+        textAlign(CENTER);
+        text('156', innerWidth / 2, innerHeight / 2 - 30 / 2.5);
+        fill('black');
+
+        //button text
+        strokeWeight(1.5);
+        textSize(40);
+        textAlign(CENTER);
+        text('Play Again', innerWidth / 2, innerHeight / 2 + 550 / 2.5);
+
+        //game over title text
+        textSize(80);
+        textAlign(CENTER, TOP);
+        text('Game Over',innerWidth / 2, innerHeight / 2 - 700 / 2.5);
+        fill('red');
+
 
     }
+    clicked(){
+            //returns user to menu
+            if ((mouseX > this.playAgain.x) && (mouseX < this.playAgain.x + 300) &&
+                (mouseY > this.playAgain.y) && (mouseY < this.playAgain.y  + 150)) {  
+                    this.pearWagon.gameState = "start";                  
+            }
+                
+        }
+        
+        
+    
 }

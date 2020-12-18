@@ -86,11 +86,7 @@ class PearWagon implements IGameState {
     private playScreen: PlayScreen;
     public howToPlayScreen: HowToPlayScreen;
     public gameOverScreen: GameOverScreen;
-    // private gameOverScreen: GameOverScreen;
-    // private howToPlayScreen: HowToPlayScreen;
-
-    
-
+   
     public gameState: "start" | "over" | "play" | "how";
 
     constructor() {

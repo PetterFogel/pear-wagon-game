@@ -1,25 +1,26 @@
 class PlayScreen {
     private pearWagon: IGameState
 
+    private drop: Drop
+
     constructor(pearWagon: IGameState) {
         this.pearWagon = pearWagon;
-    }
-    update() {
+
+        this.drop = new Drop(random(0, innerWidth), 20, 20);
+
         
-        // if (mouseIsPressed) {
-        //     this.pearWagon.gameState = "over";
-        // }
     }
+
+    update() {
+        this.drop.move();
+        this.drop.respawn();
+    }
+
     draw() {
         push();
-        background("blue");
-        textSize(32);
-        text('playnow', 10, 30);
-        fill(0, 102, 153);
-        text('playnow', 10, 60);
-        fill(0, 102, 153, 51);
-        text('playnow', 10, 90);
+        background("lightblue");
+        this.drop.draw();
         pop();
-
     }
+
 }

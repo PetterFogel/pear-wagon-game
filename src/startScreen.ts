@@ -25,6 +25,16 @@ class StartScreen {
         this.howToButton.x = innerWidth / 2 + 50;
         this.howToButton.y = innerHeight / 2 -75;
 
+        const playWasClicked = this.playButton.update();
+        if (playWasClicked) {
+            this.pearWagon.gameState = "play";
+        }
+
+        const howToWasClicked = this.howToButton.update();
+        if (howToWasClicked) {
+            this.pearWagon.gameState = "how";
+        }
+
         // ver.2 
 
         // rectMode(CENTER);
@@ -36,6 +46,7 @@ class StartScreen {
     }
 
     draw() {
+        push();
         background(239, 35, 35);
 
         // TEST PÄRON
@@ -103,23 +114,8 @@ class StartScreen {
         // textSize(40)
         // strokeWeight(3);
         // text("How to play?", this.howToButton.x, this.howToButton.y);
+        pop();
 
-    }
-
-    clicked(){
-        for(let i = 0; i < this.buttons.length; i++){
-            if (i === 0){
-                if ((mouseX > this.buttons[0].x) && (mouseX < this.buttons[0].x + 300) &&
-                (mouseY > this.buttons[0].y) && (mouseY < this.buttons[0].y + 150)) {
-                  this.pearWagon.gameState = "play";
-                }
-            } else {
-                if ((mouseX > this.buttons[1].x) && (mouseX < this.buttons[1].x + 300) &&
-                (mouseY > this.buttons[1].y) && (mouseY < this.buttons[1].y + 150)) {
-                pearWagon.gameState = "how";
-                }
-            }
-        }
     }
 }
 

@@ -11,24 +11,30 @@ class GameOverScreen {
         this.playAgain.x = innerWidth / 2 - 150;
         this.playAgain.y = innerHeight / 2 + 165;
         
+        const buttonWasClicked = this.playAgain.update();
+        if (buttonWasClicked) {
+            this.pearWagon.gameState = "play";
+        }
     }
     draw() {
+        push();
         background(0,191,255);
-
+        
         //red and white square in center
+        fill('red');
         strokeWeight(4);
         stroke(0, 0, 0);       
         rectMode(CENTER); 
         rect(innerWidth / 2, innerHeight / 2, 700, 700, 30);
         fill(255, 255, 255);
         rect(innerWidth / 2, innerHeight / 2, 350, 250, 30);
-
+        
         //play button
         rectMode(CORNER);
         this.playAgain.draw(); 
         noStroke();
         fill(0,191,255);
-
+        
         //Highscore
         textSize(45);
         textAlign(CENTER);
@@ -51,19 +57,6 @@ class GameOverScreen {
         textSize(80);
         textAlign(CENTER, TOP);
         text('Game Over',innerWidth / 2, innerHeight / 2 - 700 / 2.5);
-        fill('red');
-
-
+        pop();
     }
-    clicked(){
-            //returns user to menu
-            if ((mouseX > this.playAgain.x) && (mouseX < this.playAgain.x + 300) &&
-                (mouseY > this.playAgain.y) && (mouseY < this.playAgain.y  + 150)) {  
-                    this.pearWagon.gameState = "start";                  
-            }
-                
-        }
-        
-        
-    
 }

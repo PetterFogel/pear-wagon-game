@@ -8,12 +8,13 @@ class HowToPlayScreen {
 
     }
     update() {
-        // if (mouseIsPressed) {
-        //     this.pearWagon.gameState = "over";
-        // }
+        const buttonWasClicked = this.menuButton.update();
+        if (buttonWasClicked) {
+            this.pearWagon.gameState = "start";
+        }
     }
-    draw() {
-        clear();
+    draw() {        
+        push();
         background(239, 35, 35);
 
         let centerX = innerWidth / 2;
@@ -29,9 +30,9 @@ class HowToPlayScreen {
         this.menuButton.draw(); 
         
         imageMode(CENTER)
-        image(img, centerX + 100, centerY -140, 700, 350);
+        image(images.keyboard, centerX + 100, centerY -140, 700, 350);
         imageMode(CORNER)
-        image(img2, centerX + 300, centerY, 200, 300);
+        image(images.mouse, centerX + 300, centerY, 200, 300);
         
         
         // Keyboard lines
@@ -84,14 +85,6 @@ class HowToPlayScreen {
         text('Bomb = Instant game over', centerX - 350, centerY + 125)
         text('Star = Double points for 5 seconds', centerX - 350, centerY + 185)
         text('Heart = Increases your hp', centerX - 350, centerY + 245)
-    }
-
-    clicked(){
-
-        if ((mouseX > this.menuButton.x) && (mouseX < this.menuButton.x + 150) &&
-        (mouseY > this.menuButton.y) && (mouseY < this.menuButton.y + 75)) {
-          this.pearWagon.gameState = "start";
-
-        }
+        pop();
     }
 }

@@ -84,11 +84,10 @@ interface IGameState {
 class PearWagon implements IGameState {
     public startScreen: StartScreen;
     private playScreen: PlayScreen;
-
-    private gameOverScreen: GameOverScreen;
     public howToPlayScreen: HowToPlayScreen;
     public gameOverScreen: GameOverScreen;
-    private howToPlayScreen: HowToPlayScreen;
+    // private gameOverScreen: GameOverScreen;
+    // private howToPlayScreen: HowToPlayScreen;
 
     
 
@@ -99,7 +98,7 @@ class PearWagon implements IGameState {
         this.playScreen = new PlayScreen(this);
         this.gameOverScreen = new GameOverScreen(this);
         this.howToPlayScreen = new HowToPlayScreen(this);
-        this.gameState = "over";
+        this.gameState = "start";
     }
 
     public update() {

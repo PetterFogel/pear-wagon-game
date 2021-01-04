@@ -3,6 +3,7 @@ interface Images {
     mouse: p5.Image;
     freshParon: p5.Image;
     ruttetParon: p5.Image;
+    wagon: p5.Image;
 }
 
 //---- GLOBAL VARIABLES ----//
@@ -19,7 +20,8 @@ function preload() {
         keyboard: loadImage('assets/keyboard.png'),
         mouse: loadImage('assets/mouse.png'),
         freshParon: loadImage('assets/images/freshparon.png'),
-        ruttetParon: loadImage('assets/images/ruttetparon.png')
+        ruttetParon: loadImage('assets/images/ruttetparon.png'),
+        wagon: loadImage('assets/images/wagon.png')
     }
     // Tyvärr har jag inte fått till den globala typningen för
     // inladdningen av ljud men fungerar bra enligt nedan..

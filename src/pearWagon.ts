@@ -14,7 +14,7 @@ class PearWagon implements IGameState {
         this.playScreen = new PlayScreen(this);
         this.gameOverScreen = new GameOverScreen(this);
         this.howToPlayScreen = new HowToPlayScreen(this);
-        this.gameState = "start";
+        this.gameState = "play";
     }
 
     public update() {

@@ -29,7 +29,7 @@ class gameObject {
 
     draw() {
 
-    image(images.freshParon, this.x, this.y, 70, 60)
+    image(images.greenPear, this.x, this.y, 70, 70)
     // image(images.ruttetParon, this.x, this.y, 70, 60)
     // noStroke();
     // fill("green");

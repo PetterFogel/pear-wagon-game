@@ -3,25 +3,25 @@ class Drop {
     private x: number
     private y: number
     private d: number
+    private speed: number
 
-    constructor(x: number, y: number, d: number) {
+    constructor(x: number, y: number, d: number, speed: number) {
         this.x = x
         this.y = y
         this.d = d
+        this.speed = speed
 
     }
 
     move() {
-        this.y = this.y + 6;
-        
-     }
+        this.y = this.y + this.speed;
+    }
 
     respawn() {
-       
-    if (this.y > innerHeight){
-        this.y = 0;
-        this.x = random(innerWidth);
-    }  
+        if (this.y > innerHeight){
+            this.y = Math.floor(Math.random() * 100) -100;
+            this.x = random(innerWidth);
+        }  
     }
 
     update() {

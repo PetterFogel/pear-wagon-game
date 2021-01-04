@@ -1,7 +1,7 @@
 
 class PlayScreen {
     private pearWagon: IGameState
-    private drops: gameObject[]
+    private drops: any[]
     // private drop: Drop
     private player: Player
     private spawnRate: number
@@ -20,7 +20,11 @@ class PlayScreen {
         let time = Date.now();
         if (time > (this.lastSpawn + this.spawnRate)){
             this.lastSpawn = time;
-            this.drops.push(new gameObject(random(0, innerWidth), 0, 20, (Math.floor(Math.random() * Math.floor(5)) + 1)));
+            if((Math.floor(Math.random() * Math.floor(5)) + 1) % 2){
+                this.drops.push(new greenPear(random(0, innerWidth), 0, 20, (Math.floor(Math.random() * Math.floor(5)) + 1)));
+            } else {
+                this.drops.push(new rottenPear(random(0, innerWidth), 0, 20, (Math.floor(Math.random() * Math.floor(5)) + 1)));
+            }
         }
 
         for(let i = 0; i < this.drops.length; i++){

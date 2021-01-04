@@ -1,7 +1,7 @@
-class gameObject {
+abstract class fallingObject {
 
-    private x: number
-    private y: number
+    public x: number
+    public y: number
     private d: number
     private speed: number
 
@@ -29,7 +29,8 @@ class gameObject {
 
     draw() {
 
-    image(images.freshParon, this.x, this.y, 70, 60)
+    //image(images.freshParon, this.x, this.y, 70, 60)
+
     // image(images.ruttetParon, this.x, this.y, 70, 60)
     // noStroke();
     // fill("green");

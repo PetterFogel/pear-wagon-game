@@ -2,13 +2,11 @@ abstract class fallingObject {
 
     public x: number
     public y: number
-    private d: number
     private speed: number
 
-    constructor(x: number, y: number, d: number, speed: number) {
+    constructor(x: number, y: number, speed: number) {
         this.x = x
         this.y = y
-        this.d = d
         this.speed = speed
     }   
 

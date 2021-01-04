@@ -1,9 +1,10 @@
 interface Images {
     keyboard: p5.Image;
     mouse: p5.Image;
-    freshParon: p5.Image;
-    ruttetParon: p5.Image;
+    greenPear: p5.Image;
+    rottenPear: p5.Image;
     wagon: p5.Image;
+    // bomb: p5.Image;
 }
 
 //---- GLOBAL VARIABLES ----//
@@ -19,9 +20,12 @@ function preload() {
     images = {
         keyboard: loadImage('assets/keyboard.png'),
         mouse: loadImage('assets/mouse.png'),
-        freshParon: loadImage('assets/images/freshparon.png'),
-        ruttetParon: loadImage('assets/images/ruttetparon.png'),
-        wagon: loadImage('assets/images/wagon.png')
+        greenPear: loadImage('assets/images/pear_small.png'),
+        rottenPear: loadImage('assets/images/rottenpear.svg'),
+        wagon: loadImage('assets/images/wagon.svg')
+        // bomb: loadImage('assets/images/bomb.svg'),
+        // heart: loadImage('assets/images/heart.svg'),
+        // star: loadImage('assets/images/star.svg')
     }
     // Tyvärr har jag inte fått till den globala typningen för
     // inladdningen av ljud men fungerar bra enligt nedan..

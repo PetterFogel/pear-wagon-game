@@ -1,8 +1,7 @@
 class rottenPear extends fallingObject {
 
-    constructor(x: number, y: number, d: number, speed: number) {
-        super(x, y, d, speed)
-
+    constructor(x: number, y: number, speed: number) {
+        super(x, y, speed)
     }   
 
     update() {
@@ -10,6 +9,6 @@ class rottenPear extends fallingObject {
     }
 
     draw() {
-        image(images.ruttetParon, this.x, this.y, 70, 60)
+        image(images.rottenPear, this.x, this.y, 70, 70)
     }
 }

@@ -1,7 +1,7 @@
 class greenPear extends fallingObject {
 
-    constructor(x: number, y: number, d: number, speed: number) {
-        super(x, y, d, speed)
+    constructor(x: number, y: number, speed: number) {
+        super(x, y, speed)
 
     }   
 
@@ -11,7 +11,7 @@ class greenPear extends fallingObject {
     }
 
     draw() {
-        image(images.freshParon, this.x, this.y, 70, 60)
+        image(images.greenPear, this.x, this.y, 70, 70)
     }
 
 }

@@ -20,7 +20,7 @@ class Player {
         imageMode(CENTER)
         // image(img, 50, 50);
         
-        image(images.wagon, mouseX, innerHeight - this.y, 100, 100);
+        image(images.wagon, mouseX, innerHeight - this.y, 120, 160);
 
         noCursor()
 

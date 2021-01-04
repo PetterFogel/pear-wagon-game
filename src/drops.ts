@@ -13,6 +13,7 @@ class Drop {
 
     move() {
         this.y = this.y + 6;
+        
      }
 
     respawn() {
@@ -29,9 +30,11 @@ class Drop {
 
     draw() {
 
-    noStroke();
-    fill("green");
-    ellipse(this.x, this.y, this.d * 2)
+    image(images.freshParon, this.x, this.y, 70, 60)
+    image(images.ruttetParon, this.x, this.y, 70, 60)
+    // noStroke();
+    // fill("green");
+    // ellipse(this.x, this.y, this.d * 2)
 
     }
 

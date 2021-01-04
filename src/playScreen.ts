@@ -22,10 +22,17 @@ class PlayScreen {
         let time = Date.now();
         if (time > (this.lastSpawn + this.spawnRate)){
             this.lastSpawn = time;
-            if((Math.floor(Math.random() * Math.floor(5)) + 1) % 2){
-                this.drops.push(new greenPear(random(0, innerWidth), 0, (Math.floor(Math.random() * Math.floor(5)) + 1)));
+            let numb = (Math.floor(Math.random() * Math.floor(99)) + 1)
+            if(numb >= 40){
+                this.drops.push(new GreenPear(random(0, innerWidth), 0, (Math.floor(Math.random() * Math.floor(5)) + 1)));
+            } else if(numb >= 30 && numb <= 39) {
+                this.drops.push(new RottenPear(random(0, innerWidth), 0, (Math.floor(Math.random() * Math.floor(5)) + 1)));
+            } else if(numb >= 20 && numb <= 29){
+                this.drops.push(new Bomb(random(0, innerWidth), 0, (Math.floor(Math.random() * Math.floor(5)) + 1)));
+            } else if(numb >= 10 && numb <= 19) {
+                this.drops.push(new Star(random(0, innerWidth), 0, (Math.floor(Math.random() * Math.floor(5)) + 1)));
             } else {
-                this.drops.push(new rottenPear(random(0, innerWidth), 0, (Math.floor(Math.random() * Math.floor(5)) + 1)));
+                this.drops.push(new Heart(random(0, innerWidth), 0, (Math.floor(Math.random() * Math.floor(5)) + 1)));
             }
         }
 

@@ -1,4 +1,4 @@
-class rottenPear extends fallingObject {
+class RottenPear extends FallingObject {
 
     constructor(x: number, y: number, speed: number) {
         super(x, y, speed)

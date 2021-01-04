@@ -1,4 +1,4 @@
-class greenPear extends fallingObject {
+class GreenPear extends FallingObject {
 
     constructor(x: number, y: number, speed: number) {
         super(x, y, speed)

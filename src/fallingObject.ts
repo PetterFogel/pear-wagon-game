@@ -1,4 +1,4 @@
-abstract class fallingObject {
+abstract class FallingObject {
 
     public x: number
     public y: number

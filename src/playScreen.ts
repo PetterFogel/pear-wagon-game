@@ -6,9 +6,11 @@ class PlayScreen {
     private player: Player
     private spawnRate: number
     private lastSpawn: number
+    private ground: number
 
     constructor(pearWagon: IGameState) {
         this.pearWagon = pearWagon;
+        this.ground = 168
         this.drops = []
         this.spawnRate = 500;
         this.lastSpawn = -1;
@@ -34,13 +36,20 @@ class PlayScreen {
 
     draw() {
         push();
-        background("lightblue");
+        background(136, 207, 248);
         // this.drop.draw();
         // this.player.draw();
         for(let i = 0; i < this.drops.length; i++){
             this.drops[i].draw();
         }
         this.player.draw();
+
+        //Ground
+        noStroke();
+        fill(27, 133, 30);
+        rect(0, innerHeight - this.ground, innerWidth, 400);
+        fill(125, 106, 68);
+        rect(0, innerHeight - this.ground + 20, innerWidth, 400);
         pop();
     }
 

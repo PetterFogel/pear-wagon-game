@@ -43,6 +43,41 @@ class PlayScreen {
         // this.drops[i].respawn();
         // this.drop.move();
         // this.drop.respawn();
+        this.player.update();
+        this.checkCollision();
+    }
+
+    checkCollision() {
+        for (let drop of this.drops) {
+            let distX = Math.abs(drop.x - this.player.x);
+            const distY = Math.abs(drop.y - this.player.y);
+            
+            // return true if the rectangle and circle are colliding
+    
+            // if (distX > (rect.w/2 + circle.r)) { return false; }
+            // if (distY > (rect.h/2 + circle.r)) { return false; }
+    
+            // if (distX <= (rect.w/2)) { return true; } 
+            // if (distY <= (rect.h/2)) { return true; }
+    
+            // var dx=distX-rect.w/2;
+            // var dy=distY-rect.h/2;
+            // return (dx*dx+dy*dy<=(circle.r*circle.r));
+
+            if (distX > (this.player.width/2 + drop.r)) { return false; }
+            if (distY > (this.player.height/2 + drop.r)) { return false; }
+    
+            if (distX <= (this.player.width/2)) { return true; } 
+            if (distY <= (this.player.height/2)) { return true; }
+    
+            let dx = distX - this.player.width/2;
+            const dy = distY - this.player.height/2;
+
+
+            return (dx * dx + dy * dy <= (drop.r * drop.r));
+            
+        }
+
     }
 
     draw() {
@@ -51,8 +86,8 @@ class PlayScreen {
         // this.drop.draw();
         // this.player.draw();
         
-        image(images.cloud1, 100, 100, 362, 214);
-        image(images.cloud2, 900, 50, 362, 214);
+        image(images.cloud1, innerWidth / 100 * 8, 100, 362, 214);
+        image(images.cloud2, innerWidth / 100 * 65, 50, 362, 214);
         
         for(let i = 0; i < this.drops.length; i++){
             this.drops[i].draw();

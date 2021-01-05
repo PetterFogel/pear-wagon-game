@@ -1,12 +1,18 @@
 class Player {
-    private y: number
+    public x: number
+    public y: number
+    public width: number
+    public height: number
 
     constructor() {
-        this.y = 180;
+        this.x = mouseX;
+        this.y = innerHeight - 180;
+        this.width = 120;
+        this.height = 160;
     }
 
     update() {
-
+        this.x = mouseX;
     }
 
     draw() {
@@ -20,7 +26,7 @@ class Player {
         imageMode(CENTER)
         // image(img, 50, 50);
         
-        image(images.wagon, mouseX, innerHeight - this.y, 120, 160);
+        image(images.wagon, this.x, this.y, this.width, this.height);
 
         noCursor()
 

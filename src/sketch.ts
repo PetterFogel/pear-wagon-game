@@ -5,6 +5,8 @@ interface Images {
     rottenPear: p5.Image;
     wagon: p5.Image;
     bomb: p5.Image;
+    star: p5.Image;
+    heart: p5.Image;
 }
 
 //---- GLOBAL VARIABLES ----//
@@ -21,9 +23,11 @@ function preload() {
         keyboard: loadImage('assets/keyboard.png'),
         mouse: loadImage('assets/mouse.png'),
         greenPear: loadImage('assets/images/pear_small.png'),
-        rottenPear: loadImage('assets/images/rottenpear.svg'),
+        rottenPear: loadImage('assets/images/rottenPear.png'),
         wagon: loadImage('assets/images/wagon.svg'),
-        bomb: loadImage('assets/images/bomb.svg')
+        bomb: loadImage('assets/images/bomb.png'),
+        star: loadImage('assets/images/star.png'),
+        heart: loadImage('assets/images/heart.png')
         // heart: loadImage('assets/images/heart.svg'),
         // star: loadImage('assets/images/star.svg')
     }

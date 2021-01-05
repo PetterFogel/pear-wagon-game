@@ -11,9 +11,9 @@ class Heart extends FallingObject {
     }
 
     draw() {
-        // image(images.bomb, this.x, this.y, 70, 70)
-        ellipse(this.x, this.y, 70);
-        fill('red');
+        image(images.heart, this.x, this.y, 70, 70)
+        // ellipse(this.x, this.y, 70);
+        // fill('red');
     }
 
 }

@@ -11,9 +11,9 @@ class Star extends FallingObject {
     }
 
     draw() {
-        // image(images.bomb, this.x, this.y, 70, 70)
-        ellipse(this.x, this.y, 70);
-        fill('yellow');
+        image(images.star, this.x, this.y, 70, 70)
+        // ellipse(this.x, this.y, 70);
+        // fill('yellow');
     }
 
 }

@@ -50,6 +50,10 @@ class PlayScreen {
         background(136, 207, 248);
         // this.drop.draw();
         // this.player.draw();
+        
+        image(images.cloud1, 100, 100, 362, 214);
+        image(images.cloud2, 900, 50, 362, 214);
+        
         for(let i = 0; i < this.drops.length; i++){
             this.drops[i].draw();
         }
@@ -62,6 +66,7 @@ class PlayScreen {
         fill(125, 106, 68);
         rect(0, innerHeight - this.ground + 20, innerWidth, 400);
         pop();
+
     }
 
 }

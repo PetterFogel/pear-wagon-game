@@ -7,6 +7,8 @@ interface Images {
     bomb: p5.Image;
     star: p5.Image;
     heart: p5.Image;
+    cloud1: p5.Image;
+    cloud2: p5.Image;
 }
 
 //---- GLOBAL VARIABLES ----//
@@ -27,7 +29,9 @@ function preload() {
         wagon: loadImage('assets/images/wagon.svg'),
         bomb: loadImage('assets/images/bomb.png'),
         star: loadImage('assets/images/star.png'),
-        heart: loadImage('assets/images/heart.png')
+        heart: loadImage('assets/images/heart.png'),
+        cloud1: loadImage('assets/cloud1.png'),
+        cloud2: loadImage('assets/cloud2.png')
     }
     
     // Tyvärr har jag inte fått till den globala typningen för

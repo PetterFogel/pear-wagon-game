@@ -26,15 +26,15 @@ class PlayScreen {
             this.lastSpawn = time;
             let numb = (Math.floor(Math.random() * Math.floor(99)) + 1)
             if(numb >= 40){
-                this.drops.push(new GreenPear(random(0, innerWidth), 0, (Math.floor(Math.random() * Math.floor(5)) + 1)));
+                this.drops.push(new GreenPear(random(0, innerWidth), 0, (Math.floor(Math.random() * Math.floor(5)) + 1), 70));
             } else if(numb >= 30 && numb <= 39) {
-                this.drops.push(new RottenPear(random(0, innerWidth), 0, (Math.floor(Math.random() * Math.floor(5)) + 1)));
+                this.drops.push(new RottenPear(random(0, innerWidth), 0, (Math.floor(Math.random() * Math.floor(5)) + 1), 70));
             } else if(numb >= 20 && numb <= 29){
-                this.drops.push(new Bomb(random(0, innerWidth), 0, (Math.floor(Math.random() * Math.floor(5)) + 1)));
+                this.drops.push(new Bomb(random(0, innerWidth), 0, (Math.floor(Math.random() * Math.floor(5)) + 1), 70));
             } else if(numb >= 10 && numb <= 19) {
-                this.drops.push(new Star(random(0, innerWidth), 0, (Math.floor(Math.random() * Math.floor(5)) + 1)));
+                this.drops.push(new Star(random(0, innerWidth), 0, (Math.floor(Math.random() * Math.floor(5)) + 1), 70));
             } else {
-                this.drops.push(new Heart(random(0, innerWidth), 0, (Math.floor(Math.random() * Math.floor(5)) + 1)));
+                this.drops.push(new Heart(random(0, innerWidth), 0, (Math.floor(Math.random() * Math.floor(5)) + 1), 70));
             }
         }
 
@@ -50,7 +50,7 @@ class PlayScreen {
     }
 
     checkCollision() {
-        for (let drop of this.drops) {
+        for(let drop of this.drops) {
             let distX = Math.abs(drop.x - this.player.x);
             const distY = Math.abs(drop.y - this.player.y);
             
@@ -66,17 +66,21 @@ class PlayScreen {
             // var dy=distY-rect.h/2;
             // return (dx*dx+dy*dy<=(circle.r*circle.r));
 
-            if (distX > (this.player.width/2 + drop.r)) { return false; }
-            if (distY > (this.player.height/2 + drop.r)) { return false; }
+            // if (distX > (this.player.width + drop.r / 2)) { return false; }
+            // if (distY > (this.player.height + drop.r / 2)) { return false; }
     
-            if (distX <= (this.player.width/2)) { return true; } 
-            if (distY <= (this.player.height/2)) { return true; }
+            // if (distX <= (this.player.width/2)) { return console.log("collision") } 
+            // if (distY <= (this.player.height/2)) { return console.log("collision") }
+
+            if (distX <= (this.player.width/2) && distY <= (this.player.height/2)) {
+                console.log("collision");
+            }
     
-            let dx = distX - this.player.width/2;
-            const dy = distY - this.player.height/2;
+            // let dx = distX - this.player.width/2;
+            // const dy = distY - this.player.height/2;
 
 
-            return (dx * dx + dy * dy <= (drop.r * drop.r));
+            // return (dx * dx + dy * dy <= (drop.r * drop.r));
             
         }
 

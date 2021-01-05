@@ -2,12 +2,14 @@ abstract class FallingObject {
 
     public x: number
     public y: number
+    public r: number
     private speed: number
 
-    constructor(x: number, y: number, speed: number) {
+    constructor(x: number, y: number, speed: number, r: number) {
         this.x = x
         this.y = y
         this.speed = speed
+        this.r = r;
     }   
 
     move() {
@@ -26,7 +28,10 @@ abstract class FallingObject {
     }
 
     draw() {
+    // stroke(5);
 
+    // ellipse(this.x, this.y, 100)
+    // fill('yellow')
     //image(images.freshParon, this.x, this.y, 70, 60)
 
     // image(images.ruttetParon, this.x, this.y, 70, 60)

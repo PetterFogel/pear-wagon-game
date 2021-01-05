@@ -1,7 +1,7 @@
 class Star extends FallingObject {
 
-    constructor(x: number, y: number, speed: number) {
-        super(x, y, speed)
+    constructor(x: number, y: number, speed: number, r: number) {
+        super(x, y, speed, r)
 
     }   
 
@@ -11,9 +11,11 @@ class Star extends FallingObject {
     }
 
     draw() {
+        push()
         image(images.star, this.x, this.y, 70, 70)
         // ellipse(this.x, this.y, 70);
         // fill('yellow');
+        pop()
     }
 
 }

@@ -67,11 +67,11 @@ class HowToPlayScreen {
         text('Move right', centerX + 470, centerY + 120)
         // Circles
         imageMode(CENTER)
-        image(images.greenPear, centerX -350, centerY + 10, 70, 70);
-        image(images.rottenPear, centerX -350, centerY + 75, 70, 70);
-        image(images.heart, centerX -350, centerY + 260, 70, 70);
-        image(images.star, centerX -350, centerY + 200, 70, 70);
-        image(images.bomb, centerX -350, centerY + 140, 70, 70);
+        image(images.greenPear, centerX -390, centerY + 10, 70, 70);
+        image(images.rottenPear, centerX -390, centerY + 75, 70, 70);
+        image(images.heart, centerX -390, centerY + 140, 70, 70);
+        image(images.star, centerX -390, centerY + 205, 70, 70);
+        image(images.bomb, centerX -390, centerY + 270, 70, 70);
 
         // fill('green')
         // ellipse(centerX -400, centerY, 50);
@@ -86,11 +86,11 @@ class HowToPlayScreen {
 
         // Object text
         fill(0);
-        text('Green Pear = Gives you points', centerX - 300, centerY + 15)
-        text('Rotten Pear = Your hp decreases', centerX - 300, centerY + 80)
-        text('Heart = Increases your hp', centerX - 300, centerY + 265)
-        text('Star = Double points for 5 seconds', centerX - 300, centerY + 205)
-        text('Bomb = Instant game over', centerX - 300, centerY + 150)
+        text('Green Pear = Gives you points', centerX - 310, centerY + 15)
+        text('Rotten Pear = Your hp decreases', centerX - 310, centerY + 80)
+        text('Heart = Increases your hp', centerX - 310, centerY + 146)
+        text('Star = Double points for 5 seconds', centerX - 310, centerY + 212)
+        text('Bomb = Instant game over', centerX - 310, centerY + 280)
         // Back to start, button-text
         textSize(40);
         strokeWeight(3);

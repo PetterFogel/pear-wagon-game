@@ -4,6 +4,7 @@ class PlayScreen {
     private drops: any[]
     // private drop: Drop
     private player: Player
+    private scoreHp: ScoreHpDisplay
     private spawnRate: number
     private lastSpawn: number
     private ground: number
@@ -16,6 +17,7 @@ class PlayScreen {
         this.lastSpawn = -1;
         
         this.player = new Player
+        this.scoreHp = new ScoreHpDisplay
     }
 
     update() {
@@ -93,6 +95,7 @@ class PlayScreen {
             this.drops[i].draw();
         }
         this.player.draw();
+        this.scoreHp.draw();
 
         //Ground
         noStroke();

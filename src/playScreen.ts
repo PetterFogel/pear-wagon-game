@@ -90,6 +90,9 @@ class PlayScreen {
         
         image(images.cloud1, innerWidth / 100 * 8, 100, 362, 214);
         image(images.cloud2, innerWidth / 100 * 65, 50, 362, 214);
+
+        imageMode(CENTER);
+        image(images.tree, innerWidth / 2 + 50, innerHeight / 2 - 400, 2000, 2000);
         
         for(let i = 0; i < this.drops.length; i++){
             this.drops[i].draw();

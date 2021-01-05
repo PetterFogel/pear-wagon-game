@@ -22,15 +22,14 @@ function preload() {
     images = {
         keyboard: loadImage('assets/keyboard.png'),
         mouse: loadImage('assets/mouse.png'),
-        greenPear: loadImage('assets/images/pear_small.png'),
-        rottenPear: loadImage('assets/images/rottenPear.png'),
+        greenPear: loadImage('assets/images/pear.png'),
+        rottenPear: loadImage('assets/images/rottenpear.png'),
         wagon: loadImage('assets/images/wagon.svg'),
         bomb: loadImage('assets/images/bomb.png'),
         star: loadImage('assets/images/star.png'),
         heart: loadImage('assets/images/heart.png')
-        // heart: loadImage('assets/images/heart.svg'),
-        // star: loadImage('assets/images/star.svg')
     }
+    
     // Tyvärr har jag inte fått till den globala typningen för
     // inladdningen av ljud men fungerar bra enligt nedan..
     // sound = (window as any).loadSound('../assets/mySound.wav');

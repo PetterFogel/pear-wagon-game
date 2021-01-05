@@ -10,7 +10,7 @@ class PlayScreen {
 
     constructor(pearWagon: IGameState) {
         this.pearWagon = pearWagon;
-        this.ground = 168
+        this.ground = 100;
         this.drops = []
         this.spawnRate = 500;
         this.lastSpawn = -1;

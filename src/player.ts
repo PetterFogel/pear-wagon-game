@@ -2,7 +2,7 @@ class Player {
     private y: number
 
     constructor() {
-        this.y = 250
+        this.y = 180;
     }
 
     update() {

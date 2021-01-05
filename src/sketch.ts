@@ -20,8 +20,8 @@ let images: Images;
  */
 function preload() {
     images = {
-        keyboard: loadImage('assets/keyboard.png'),
-        mouse: loadImage('assets/mouse.png'),
+        keyboard: loadImage('assets/images/keyboard.png'),
+        mouse: loadImage('assets/images/mouse.png'),
         greenPear: loadImage('assets/images/pear.png'),
         rottenPear: loadImage('assets/images/rottenpear.png'),
         wagon: loadImage('assets/images/wagon.svg'),

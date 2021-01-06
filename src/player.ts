@@ -13,7 +13,6 @@ class Player {
 
     update() {
         this.x = mouseX;
-        this.y = innerHeight - 180;
     }
 
     draw() {
@@ -34,3 +33,4 @@ class Player {
     }
 
 }
+

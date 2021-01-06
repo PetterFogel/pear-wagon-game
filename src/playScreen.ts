@@ -13,7 +13,7 @@ class PlayScreen {
         this.pearWagon = pearWagon;
         this.ground = 100;
         this.drops = []
-        this.spawnRate = 500;
+        this.spawnRate = 1500;
         this.lastSpawn = -1;
         
         this.player = new Player
@@ -26,15 +26,15 @@ class PlayScreen {
             this.lastSpawn = time;
             let numb = (Math.floor(Math.random() * Math.floor(99)) + 1)
             if(numb >= 40){
-                this.drops.push(new GreenPear(random(0, innerWidth), 0, (Math.floor(Math.random() * Math.floor(5)) + 1), 70));
+                this.drops.push(new GreenPear(random(0, innerWidth), 0, (Math.floor(Math.random() * Math.floor(5)) + 2), 70));
             } else if(numb >= 30 && numb <= 39) {
-                this.drops.push(new RottenPear(random(0, innerWidth), 0, (Math.floor(Math.random() * Math.floor(5)) + 1), 70));
+                this.drops.push(new RottenPear(random(0, innerWidth), 0, (Math.floor(Math.random() * Math.floor(5)) + 2), 70));
             } else if(numb >= 20 && numb <= 29){
-                this.drops.push(new Bomb(random(0, innerWidth), 0, (Math.floor(Math.random() * Math.floor(5)) + 1), 70));
+                this.drops.push(new Bomb(random(0, innerWidth), 0, (Math.floor(Math.random() * Math.floor(5)) + 2), 70));
             } else if(numb >= 10 && numb <= 19) {
-                this.drops.push(new Star(random(0, innerWidth), 0, (Math.floor(Math.random() * Math.floor(5)) + 1), 70));
+                this.drops.push(new Star(random(0, innerWidth), 0, (Math.floor(Math.random() * Math.floor(5)) + 2), 70));
             } else {
-                this.drops.push(new Heart(random(0, innerWidth), 0, (Math.floor(Math.random() * Math.floor(5)) + 1), 70));
+                this.drops.push(new Heart(random(0, innerWidth), 0, (Math.floor(Math.random() * Math.floor(5)) + 2), 70));
             }
         }
 
@@ -51,7 +51,7 @@ class PlayScreen {
 
     checkCollision() {
         for(let drop of this.drops) {
-            let distX = Math.abs(drop.x - this.player.x);
+            const distX = Math.abs(drop.x - this.player.x);
             const distY = Math.abs(drop.y - this.player.y);
             
             // return true if the rectangle and circle are colliding
@@ -74,6 +74,11 @@ class PlayScreen {
 
             if (distX <= (this.player.width/2) && distY <= (this.player.height/2)) {
                 console.log("collision");
+            }
+
+            if (drop.y > innerHeight * 2){
+                this.drops.shift();
+                console.log(this.drops);
             }
     
             // let dx = distX - this.player.width/2;

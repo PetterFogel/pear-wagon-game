@@ -59,4 +59,5 @@ class GameOverScreen {
         text('Game Over',innerWidth / 2, innerHeight / 2 - 700 / 2.5);
         pop();
     }
+    
 }

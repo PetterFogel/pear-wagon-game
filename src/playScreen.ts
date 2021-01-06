@@ -13,7 +13,7 @@ class PlayScreen {
         this.pearWagon = pearWagon;
         this.ground = 100;
         this.drops = []
-        this.spawnRate = 1500;
+        this.spawnRate = 500;
         this.lastSpawn = -1;
         
         this.player = new Player
@@ -79,7 +79,7 @@ class PlayScreen {
                 }
             }
 
-            if (drop.y > innerHeight * 2){
+            if (drop.y > innerHeight * 5){
                 this.drops.shift();
                 console.log(this.drops);
             }

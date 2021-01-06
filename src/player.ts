@@ -19,6 +19,8 @@ class Player {
     }
 
     draw() {
+        push();
+        
         fill(255,255,0)
         // ellipse(mouseX -30, innerHeight -this.yWheel, 20, 20)
         // ellipse(mouseX +35, innerHeight -this.yWheel, 20, 20)
@@ -31,7 +33,8 @@ class Player {
         
         image(images.wagon, this.x, this.y, this.width, this.height);
 
-        noCursor()
+        noCursor();
+        pop();
 
     }
 

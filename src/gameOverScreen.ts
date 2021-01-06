@@ -3,21 +3,31 @@ class GameOverScreen {
     private pearWagon: IGameState;
     private playAgain: Button;
 
+
     constructor(pearWagon: IGameState) {
         this.pearWagon = pearWagon;
         this.playAgain = new Button(innerWidth / 2, innerHeight / 2, 300, 150,  "limegreen");
     }
+
     update() {
         this.playAgain.x = innerWidth / 2 - 150;
         this.playAgain.y = innerHeight / 2 + 165;
         
         const buttonWasClicked = this.playAgain.update();
         if (buttonWasClicked) {
-            this.pearWagon.gameState = "play";
+            this.pearWagon.gameState = "start";
         }
+
     }
+
+    // resetData() {
+    //     this.points = 0;
+    //     this.HP = 100;
+    // }
+
     draw() {
         push();
+        cursor(ARROW);
         background(0,191,255);
         
         //red and white square in center
@@ -44,7 +54,7 @@ class GameOverScreen {
         //displays score points
         textSize(70);
         textAlign(CENTER);
-        text('156', innerWidth / 2, innerHeight / 2 - 30 / 2.5);
+        text(1500, innerWidth / 2, innerHeight / 2 - 30 / 2.5);
         fill('black');
 
         //button text
@@ -59,5 +69,11 @@ class GameOverScreen {
         text('Game Over',innerWidth / 2, innerHeight / 2 - 700 / 2.5);
         pop();
     }
+
+    // reset() {
+    //     this.pearWagon.gameState = "start";
+    //     this.points = 0;
+    //     this.HP = 100;
+    // }
     
 }

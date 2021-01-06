@@ -16,9 +16,12 @@ class ScoreHpDisplay {
     }
 
     update() {
-        if (this.HP === 0) {
+        if (this.HP <= 0) {
             this.pearWagon.gameState = "over";
-        }     
+        }  
+        
+        if (this.pearWagon.gameState === "over") { this.points = 0;
+            this.HP = 100; }
     }
 
     draw() {

@@ -14,7 +14,7 @@ class ScoreHpDisplay {
     }
 
     update() {
-
+        
 
     }
 
@@ -31,8 +31,10 @@ class ScoreHpDisplay {
         textSize(15);
         fill('red')
         text('HP:', 52, 102);
+        text(this.HP, 82, 102);
         fill('black')
         text('POINTS:', 70, 62);
+        text(this.points, 120, 62);
         
         
 

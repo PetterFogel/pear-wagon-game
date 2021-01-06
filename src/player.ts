@@ -6,13 +6,14 @@ class Player {
 
     constructor() {
         this.x = mouseX;
-        this.y = innerHeight - 142;
+        this.y = innerHeight - 138;
         this.width = 150;
-        this.height = 90;
+        this.height = 80;
     }
 
     update() {
         this.x = mouseX;
+        this.y = innerHeight - 138;
     }
 
     draw() {

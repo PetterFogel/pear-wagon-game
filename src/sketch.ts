@@ -9,7 +9,7 @@ interface Images {
     heart: p5.Image;
     cloud1: p5.Image;
     cloud2: p5.Image;
-    tree: p5.Image;
+    // tree: p5.Image;
 }
 
 //---- GLOBAL VARIABLES ----//
@@ -32,8 +32,8 @@ function preload() {
         star: loadImage('assets/images/star.png'),
         heart: loadImage('assets/images/heart.png'),
         cloud1: loadImage('assets/images/cloud1.png'),
-        cloud2: loadImage('assets/images/cloud2.png'),
-        tree: loadImage('assets/images/tree.png')
+        cloud2: loadImage('assets/images/cloud2.png')
+        // tree: loadImage('assets/images/tree.png')
     }
     
     // Tyvärr har jag inte fått till den globala typningen för

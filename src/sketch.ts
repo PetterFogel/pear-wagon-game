@@ -27,7 +27,7 @@ function preload() {
         mouse: loadImage('assets/images/mouse.png'),
         greenPear: loadImage('assets/images/pear.png'),
         rottenPear: loadImage('assets/images/rottenpear.png'),
-        wagon: loadImage('assets/images/wagon.svg'),
+        wagon: loadImage('assets/images/wagon.png'),
         bomb: loadImage('assets/images/bomb.png'),
         star: loadImage('assets/images/star.png'),
         heart: loadImage('assets/images/heart.png'),

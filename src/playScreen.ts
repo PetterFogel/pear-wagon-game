@@ -53,39 +53,36 @@ class PlayScreen {
         for(let drop of this.drops) {
             const distX = Math.abs(drop.x - this.player.x);
             const distY = Math.abs(drop.y - this.player.y);
-            
-            // return true if the rectangle and circle are colliding
-    
-            // if (distX > (rect.w/2 + circle.r)) { return false; }
-            // if (distY > (rect.h/2 + circle.r)) { return false; }
-    
-            // if (distX <= (rect.w/2)) { return true; } 
-            // if (distY <= (rect.h/2)) { return true; }
-    
-            // var dx=distX-rect.w/2;
-            // var dy=distY-rect.h/2;
-            // return (dx*dx+dy*dy<=(circle.r*circle.r));
-
-            // if (distX > (this.player.width + drop.r / 2)) { return false; }
-            // if (distY > (this.player.height + drop.r / 2)) { return false; }
-    
-            // if (distX <= (this.player.width/2)) { return console.log("collision") } 
-            // if (distY <= (this.player.height/2)) { return console.log("collision") }
+        
 
             if (distX <= (this.player.width/2) && distY <= (this.player.height/2)) {
-                console.log("collision");
+                if (drop instanceof GreenPear) {
+                    console.log("Green pear!")
+                    // call function to add points
+                    // remove object
+                } else if (drop instanceof RottenPear){
+                    console.log("Rotten pear!")
+                    // call function to remove HP
+                    // remove object
+                } else if (drop instanceof Bomb){
+                    console.log("Bomb!")
+                    // call function to remove ALL HP
+                    // remove object
+                } else if (drop instanceof Star){
+                    console.log("Star!")
+                    // call function to do double points
+                    // remove object
+                } else {
+                    console.log("heart!")
+                    // call function to add HP
+                    // remove object
+                }
             }
 
             if (drop.y > innerHeight * 2){
                 this.drops.shift();
                 console.log(this.drops);
             }
-    
-            // let dx = distX - this.player.width/2;
-            // const dy = distY - this.player.height/2;
-
-
-            // return (dx * dx + dy * dy <= (drop.r * drop.r));
             
         }
 

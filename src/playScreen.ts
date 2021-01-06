@@ -53,35 +53,38 @@ class PlayScreen {
         for(let drop of this.drops) {
             const distX = Math.abs(drop.x - this.player.x);
             const distY = Math.abs(drop.y - this.player.y);
-        
+            let index = this.drops.indexOf(drop);
 
             if (distX <= (this.player.width/2) && distY <= (this.player.height/2)) {
                 if (drop instanceof GreenPear) {
-                    console.log("Green pear!")
-                    // call function to add points
-                    // remove object
+
+                    this.drops.splice(index, 1);
+                    this.scoreHp.addPoints();
+                    console.log(this.scoreHp.points);
+
                 } else if (drop instanceof RottenPear){
-                    console.log("Rotten pear!")
-                    // call function to remove HP
-                    // remove object
+
+                    this.drops.splice(index, 1);
+                    this.scoreHp.decreaseHP('rottenPear');
+
                 } else if (drop instanceof Bomb){
-                    console.log("Bomb!")
-                    // call function to remove ALL HP
-                    // remove object
+
+                    this.drops.splice(index, 1);
+                    this.scoreHp.decreaseHP('bomb');
+
                 } else if (drop instanceof Star){
-                    console.log("Star!")
-                    // call function to do double points
-                    // remove object
+
+                    this.drops.splice(index, 1);
+                    this.scoreHp.setDoublePoints();
+
                 } else {
-                    console.log("heart!")
-                    // call function to add HP
-                    // remove object
+                    this.drops.splice(index, 1);
+                    this.scoreHp.increaseHP();
                 }
             }
 
             if (drop.y > innerHeight * 5){
                 this.drops.shift();
-                console.log(this.drops);
             }
             
         }

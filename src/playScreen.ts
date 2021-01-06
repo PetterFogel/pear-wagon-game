@@ -13,11 +13,11 @@ class PlayScreen {
         this.pearWagon = pearWagon;
         this.ground = 100;
         this.drops = []
-        this.spawnRate = 500;
+        this.spawnRate = 50;
         this.lastSpawn = -1;
         
         this.player = new Player
-        this.scoreHp = new ScoreHpDisplay
+        this.scoreHp = new ScoreHpDisplay(this.pearWagon)
     }
 
     update() {
@@ -47,6 +47,7 @@ class PlayScreen {
         // this.drop.respawn();
         this.player.update();
         this.checkCollision();
+        this.scoreHp.update();
     }
 
     checkCollision() {

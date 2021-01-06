@@ -1,21 +1,27 @@
 class ScoreHpDisplay {
+    private pearWagon: IGameState
     private x: number
     private y: number
     public points: number
     public HP: number
     public pointIncrease: number;
 
-    constructor() {
+    constructor(pearWagon: IGameState) {
         this.x = 150;
         this.y = 120;
         this.points = 0;
         this.HP = 100;
         this.pointIncrease = 10;
+        this.pearWagon = pearWagon;
     }
 
     update() {
-
-
+        if (this.HP <= 0) {
+            this.pearWagon.gameState = "over";
+        }  
+        
+        if (this.pearWagon.gameState === "over") { this.points = 0;
+            this.HP = 100; }
     }
 
     draw() {
@@ -31,8 +37,10 @@ class ScoreHpDisplay {
         textSize(15);
         fill('red')
         text('HP:', 52, 102);
+        text(this.HP, 82, 102);
         fill('black')
         text('POINTS:', 70, 62);
+        text(this.points, 120, 62);
         
         
 
@@ -47,6 +55,7 @@ class ScoreHpDisplay {
         if(type == 'rottenPear')this.HP -= 20;
         else this.HP = 0;
     }
+    
 
     setDoublePoints(){
         this.pointIncrease = 20;

@@ -4,11 +4,13 @@ class Player {
     public width: number
     public height: number
 
+
     constructor() {
         this.x = mouseX;
         this.y = innerHeight - 138;
         this.width = 150;
         this.height = 80;
+
     }
 
     update() {
@@ -32,6 +34,10 @@ class Player {
         noCursor()
 
     }
+
+
+
+
 
 }
 

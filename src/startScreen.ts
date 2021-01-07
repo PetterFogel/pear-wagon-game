@@ -27,12 +27,12 @@ class StartScreen {
 
         const playWasClicked = this.playButton.update();
         if (playWasClicked) {
-            this.pearWagon.gameState = "play";
+            this.pearWagon.setNewGameState("play");
         }
 
         const howToWasClicked = this.howToButton.update();
         if (howToWasClicked) {
-            this.pearWagon.gameState = "how";
+            this.pearWagon.setNewGameState("how");
         }
 
         // ver.2 

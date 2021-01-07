@@ -8,13 +8,21 @@ class PlayScreen {
     private spawnRate: number
     private lastSpawn: number
     private ground: number
+    // private speedRate: number
+    // private lastSpeed: number
+    private c: number
+    private b: number
 
     constructor(pearWagon: IGameState) {
         this.pearWagon = pearWagon;
         this.ground = 100;
         this.fallingObjects = []
         this.spawnRate = 400;
+        // this.speedRate = 400;
         this.lastSpawn = -1;
+        // this.lastSpeed = -1
+        this.c = 3
+        this.b = 2
         
         this.player = new Player
         this.scoreHp = new ScoreHpDisplay(this.pearWagon)
@@ -26,17 +34,40 @@ class PlayScreen {
             this.lastSpawn = time;
             let numb = (Math.floor(Math.random() * Math.floor(99)) + 1)
             if(numb >= 45){
-                this.fallingObjects.push(new GreenPear(random(0, innerWidth), 0, (Math.floor(Math.random() * Math.floor(3)) + 2), 70, 50));
+                this.fallingObjects.push(new GreenPear(random(0, innerWidth), 0, (Math.floor(Math.random() * Math.floor(this.c += 0.01)) + (this.b+= 0.01)), 70, 50));
             } else if(numb >= 17 && numb <= 44) {
-                this.fallingObjects.push(new RottenPear(random(0, innerWidth), 0, (Math.floor(Math.random() * Math.floor(3)) + 2), 70, 50));
+                this.fallingObjects.push(new RottenPear(random(0, innerWidth), 0, (Math.floor(Math.random() * Math.floor(this.c+= 0.01)) + (this.b+= 0.01)), 70, 50));
             } else if(numb >= 11 && numb <= 16){
-                this.fallingObjects.push(new Bomb(random(0, innerWidth), 0, (Math.floor(Math.random() * Math.floor(3)) + 2), 70, 50));
+                this.fallingObjects.push(new Bomb(random(0, innerWidth), 0, (Math.floor(Math.random() * Math.floor(this.c+= 0.01)) + (this.b+= 0.01)), 70, 50));
             } else if(numb >= 5 && numb <= 10) {
-                this.fallingObjects.push(new Star(random(0, innerWidth), 0, (Math.floor(Math.random() * Math.floor(3)) + 2), 70, 50));
+                this.fallingObjects.push(new Star(random(0, innerWidth), 0, (Math.floor(Math.random() * Math.floor(this.c+= 0.01)) + (this.b+= 0.01)), 70, 50));
             } else {
-                this.fallingObjects.push(new Heart(random(0, innerWidth), 0, (Math.floor(Math.random() * Math.floor(3)) + 2), 70, 50));
+                this.fallingObjects.push(new Heart(random(0, innerWidth), 0, (Math.floor(Math.random() * Math.floor(this.c+= 0.01)) + (this.b+= 0.01)), 70, 50));
             }
+            
+            
+
+            // let time2 = Date.now()
+            // if (time2 > (this.lastSpeed + this.speedRate)){
+            //     // console.log(this.c)
+            //     // console.log(this.b)
+            //     this.lastSpeed = time2;
+            //     let numb = (Math.floor(Math.random() * Math.floor(99)) + 1)
+            //     if(numb >= 45){
+            //         this.fallingObjects.push(new GreenPear(random(0, innerWidth), 0, (Math.floor(Math.random() * Math.floor(this.c+=2)) + this.b++), 70, 50));
+            //     } else if(numb >= 17 && numb <= 44) {
+            //         this.fallingObjects.push(new RottenPear(random(0, innerWidth), 0, (Math.floor(Math.random() * Math.floor(this.c+=2)) + this.b++), 70, 50));
+            //     } else if(numb >= 11 && numb <= 16){
+            //         this.fallingObjects.push(new Bomb(random(0, innerWidth), 0, (Math.floor(Math.random() * Math.floor(this.c+=2)) + this.b++), 70, 50));
+            //     } else if(numb >= 5 && numb <= 10) {
+            //         this.fallingObjects.push(new Star(random(0, innerWidth), 0, (Math.floor(Math.random() * Math.floor(this.c+=2)) + this.b++), 70, 50));
+            //     } else {
+            //         this.fallingObjects.push(new Heart(random(0, innerWidth), 0, (Math.floor(Math.random() * Math.floor(this.c+=2)) + this.b++), 70, 50));
+            //     }
+            // }
         }
+
+        
 
         for(let i = 0; i < this.fallingObjects.length; i++){
             this.fallingObjects[i].move();
@@ -61,7 +92,7 @@ class PlayScreen {
 
                     this.fallingObjects.splice(index, 1);
                     this.scoreHp.addPoints();
-                    console.log(this.scoreHp.points);
+                    // console.log(this.scoreHp.points);
 
                 } else if (drop instanceof RottenPear){
 

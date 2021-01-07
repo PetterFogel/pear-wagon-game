@@ -1,5 +1,5 @@
 interface IGameState {
-    gameState: "start" | "over" | "play" | "how";
+    setNewGameState: (gamestate: "start" | "over" | "play" | "how") => void;
 }
 class PearWagon implements IGameState {
     private startScreen: StartScreen;
@@ -15,6 +15,14 @@ class PearWagon implements IGameState {
         this.gameOverScreen = new GameOverScreen(this);
         this.howToPlayScreen = new HowToPlayScreen(this);        
         this.gameState = "start";
+    }
+
+    public setNewGameState (gamestate: "start" | "over" | "play" | "how") {
+        this.gameState = gamestate
+
+        if (gamestate === "start") {
+            this.playScreen = new PlayScreen(this);
+        }
     }
 
     public update() {
@@ -50,7 +58,7 @@ class PearWagon implements IGameState {
                 break;
             }
             case "over": {
-                this.gameOverScreen.draw();
+                this.gameOverScreen.draw(this.playScreen.scoreHp.points);
                 break;
             }
             case "how": {

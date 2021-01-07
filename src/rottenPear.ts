@@ -1,7 +1,7 @@
 class RottenPear extends FallingObject {
 
-    constructor(x: number, y: number, speed: number, r: number) {
-        super(x, y, speed, r)
+    constructor(x: number, y: number, speed: number, r: number, offset: number) {
+        super(x, y, speed, r, offset)
     }   
 
     update() {
@@ -10,7 +10,8 @@ class RottenPear extends FallingObject {
 
     draw() {
         push()
-        image(images.rottenPear, this.x, this.y, this.r, this.r)
+        imageMode(CENTER);
+        image(images.rottenPear, this.x, this.y, this.width, this.width)
         // ellipse(this.x, this.y, this.r)
         // fill('yellow')
         pop()

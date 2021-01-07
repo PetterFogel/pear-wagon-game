@@ -15,7 +15,7 @@ class GameOverScreen {
         
         const buttonWasClicked = this.playAgain.update();
         if (buttonWasClicked) {
-            this.pearWagon.gameState = "start";
+            this.pearWagon.setNewGameState("start");
         }
 
     }
@@ -25,7 +25,7 @@ class GameOverScreen {
     //     this.HP = 100;
     // }
 
-    draw() {
+    draw(points: number) {
         push();
         cursor(ARROW);
         background(0,191,255);
@@ -54,7 +54,7 @@ class GameOverScreen {
         //displays score points
         textSize(70);
         textAlign(CENTER);
-        text(1500, innerWidth / 2, innerHeight / 2 - 30 / 2.5);
+        text(points, innerWidth / 2, innerHeight / 2 - 30 / 2.5);
         fill('black');
 
         //button text

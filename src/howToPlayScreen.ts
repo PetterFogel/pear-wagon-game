@@ -10,7 +10,7 @@ class HowToPlayScreen {
     update() {
         const buttonWasClicked = this.menuButton.update();
         if (buttonWasClicked) {
-            this.pearWagon.gameState = "start";
+            this.pearWagon.setNewGameState("start");
         }
     }
     draw() {        

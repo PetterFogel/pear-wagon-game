@@ -13,7 +13,7 @@ class PlayScreen {
         this.pearWagon = pearWagon;
         this.ground = 100;
         this.fallingObjects = []
-        this.spawnRate = 200;
+        this.spawnRate = 400;
         this.lastSpawn = -1;
         
         this.player = new Player
@@ -25,16 +25,16 @@ class PlayScreen {
         if (time > (this.lastSpawn + this.spawnRate)){
             this.lastSpawn = time;
             let numb = (Math.floor(Math.random() * Math.floor(99)) + 1)
-            if(numb >= 40){
-                this.fallingObjects.push(new GreenPear(random(0, innerWidth), 0, (Math.floor(Math.random() * Math.floor(5)) + 2), 70, 50));
-            } else if(numb >= 30 && numb <= 39) {
-                this.fallingObjects.push(new RottenPear(random(0, innerWidth), 0, (Math.floor(Math.random() * Math.floor(5)) + 2), 70, 50));
-            } else if(numb >= 20 && numb <= 29){
-                this.fallingObjects.push(new Bomb(random(0, innerWidth), 0, (Math.floor(Math.random() * Math.floor(5)) + 2), 70, 50));
-            } else if(numb >= 10 && numb <= 19) {
-                this.fallingObjects.push(new Star(random(0, innerWidth), 0, (Math.floor(Math.random() * Math.floor(5)) + 2), 70, 50));
+            if(numb >= 45){
+                this.fallingObjects.push(new GreenPear(random(0, innerWidth), 0, (Math.floor(Math.random() * Math.floor(3)) + 2), 70, 50));
+            } else if(numb >= 17 && numb <= 44) {
+                this.fallingObjects.push(new RottenPear(random(0, innerWidth), 0, (Math.floor(Math.random() * Math.floor(3)) + 2), 70, 50));
+            } else if(numb >= 11 && numb <= 16){
+                this.fallingObjects.push(new Bomb(random(0, innerWidth), 0, (Math.floor(Math.random() * Math.floor(3)) + 2), 70, 50));
+            } else if(numb >= 5 && numb <= 10) {
+                this.fallingObjects.push(new Star(random(0, innerWidth), 0, (Math.floor(Math.random() * Math.floor(3)) + 2), 70, 50));
             } else {
-                this.fallingObjects.push(new Heart(random(0, innerWidth), 0, (Math.floor(Math.random() * Math.floor(5)) + 2), 70, 50));
+                this.fallingObjects.push(new Heart(random(0, innerWidth), 0, (Math.floor(Math.random() * Math.floor(3)) + 2), 70, 50));
             }
         }
 

@@ -56,7 +56,7 @@ class PlayScreen {
             const distY = Math.abs(drop.y - this.player.y);
             let index = this.drops.indexOf(drop);
 
-            if (distX <= (this.player.width/2) && distY <= (this.player.height/2)) {
+            if (distX <= (this.player.width/1.5) && distY <= (this.player.height/2)) {
                 if (drop instanceof GreenPear) {
 
                     this.drops.splice(index, 1);

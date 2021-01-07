@@ -7,7 +7,7 @@ class ScoreHpDisplay {
     public pointIncrease: number;
 
     constructor(pearWagon: IGameState) {
-        this.x = 150;
+        this.x = 250;
         this.y = 120;
         this.points = 0;
         this.HP = 100;
@@ -31,16 +31,16 @@ class ScoreHpDisplay {
         strokeWeight(10);
         fill('white')
         rectMode(CENTER)
-        rect(90, 75, this.x, this.y, 20)
+        rect(140, 75, this.x, this.y, 20)
         
         textAlign(CENTER)
-        textSize(15);
+        textSize(30);
         fill('red')
-        text('HP:', 52, 102);
-        text(this.HP, 82, 102);
+        text('HP:', 100, 102);
+        text(this.HP, 160, 102);
         fill('black')
-        text('POINTS:', 70, 62);
-        text(this.points, 120, 62);
+        text('POINTS:', 100, 62);
+        text(this.points, 200, 62);
         
         
 

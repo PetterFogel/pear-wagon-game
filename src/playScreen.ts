@@ -128,6 +128,7 @@ class PlayScreen {
                     this.fallingObjects.splice(index, 1);
                     this.scoreHp.addPoints();
                     // console.log(this.scoreHp.points);
+                    sounds.juicy.play();
 
                 } else if (drop instanceof RottenPear){
 

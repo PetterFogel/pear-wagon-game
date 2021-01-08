@@ -13,6 +13,7 @@ interface Images {
 }
 interface Sounds {
     bomb: p5.SoundFile;
+    juicy: p5.SoundFile;
 }
 
 //---- GLOBAL VARIABLES ----//
@@ -41,7 +42,8 @@ function preload() {
     }
 
     sounds = {
-        bomb: loadSound('assets/bomb.wav')
+        bomb: loadSound('assets/bomb.wav'),
+        juicy: loadSound('assets/juicy.wav')
     }
     
     // Tyvärr har jag inte fått till den globala typningen för

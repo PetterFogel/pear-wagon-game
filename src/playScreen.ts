@@ -17,7 +17,7 @@ class PlayScreen {
         this.pearWagon = pearWagon;
         this.ground = 100;
         this.fallingObjects = []
-        this.spawnRate = 400;
+        this.spawnRate = 300;
         // this.speedRate = 400;
         this.lastSpawn = -1;
         // this.lastSpeed = -1
@@ -129,11 +129,11 @@ class PlayScreen {
         // this.drop.draw();
         // this.player.draw();
         
-        image(images.cloud1, innerWidth / 100 * 8, 100, 362, 214);
-        image(images.cloud2, innerWidth / 100 * 65, 50, 362, 214);
+        image(images.cloud1, innerWidth / 100 * 8, 350, 362, 154);
+        image(images.cloud2, innerWidth / 100 * 65, 300, 362, 154);
 
         // imageMode(CENTER);
-        image(images.tree, innerWidth / 2 - 1050  , innerHeight / 100 * -150, 2100, 2050);
+        image(images.tree, innerWidth / 2 - 1050  , innerHeight / 2 -1500, 2100, 2350);
         
         for(let i = 0; i < this.fallingObjects.length; i++){
             this.fallingObjects[i].draw();

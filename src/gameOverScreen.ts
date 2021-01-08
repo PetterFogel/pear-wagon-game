@@ -54,14 +54,14 @@ class GameOverScreen {
         //displays score points
         textSize(70);
         textAlign(CENTER);
-        text(points, innerWidth / 2, innerHeight / 2 - 30 / 2.5);
+        text(points, innerWidth / 2, innerHeight / 2 + 30);
         fill('black');
 
         //button text
         strokeWeight(1.5);
         textSize(40);
         textAlign(CENTER);
-        text('Play Again', innerWidth / 2, innerHeight / 2 + 550 / 2.5);
+        text('Play Again', innerWidth / 2, innerHeight / 2 + 625 / 2.5);
 
         //game over title text
         textSize(80);

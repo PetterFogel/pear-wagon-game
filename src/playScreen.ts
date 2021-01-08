@@ -138,6 +138,7 @@ class PlayScreen {
 
                     this.fallingObjects.splice(index, 1);
                     this.scoreHp.decreaseHP('bomb');
+                    sounds.bomb.play();
 
                 } else if (drop instanceof Star){
 

@@ -11,10 +11,14 @@ interface Images {
     cloud2: p5.Image;
     tree: p5.Image;
 }
+interface Sounds {
+    bomb: p5.SoundFile;
+}
 
 //---- GLOBAL VARIABLES ----//
 let pearWagon: PearWagon;
 let images: Images;
+let sounds: Sounds;
 
 /**
  * Built in preload function in P5
@@ -34,6 +38,10 @@ function preload() {
         cloud1: loadImage('assets/images/cloud1.png'),
         cloud2: loadImage('assets/images/cloud2.png'),
         tree: loadImage('assets/images/tree1.png')
+    }
+
+    sounds = {
+        bomb: loadSound('assets/bomb.wav')
     }
     
     // Tyvärr har jag inte fått till den globala typningen för

@@ -133,7 +133,7 @@ class PlayScreen {
         image(images.cloud2, innerWidth / 100 * 65, 50, 362, 214);
 
         // imageMode(CENTER);
-        image(images.tree, innerWidth / 2 - 1050  , innerHeight / 2 - 1300, 2100, 2050);
+        image(images.tree, innerWidth / 2 - 1050  , innerHeight / 100 * -150, 2100, 2050);
         
         for(let i = 0; i < this.fallingObjects.length; i++){
             this.fallingObjects[i].draw();

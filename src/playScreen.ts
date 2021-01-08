@@ -31,20 +31,37 @@ class PlayScreen {
     update() {
         let time = Date.now();
         if (time > (this.lastSpawn + this.spawnRate)){
+            if (this.spawnRate >= 50) { this.spawnRate -= 0.25 }
+            
             this.lastSpawn = time;
             let numb = (Math.floor(Math.random() * Math.floor(99)) + 1)
+            
+            if (this.c <= 12 && this.b <= 11) {
+                this.c += 0.01
+                this.b+= 0.01
+            }
+
+            // if (this.c >= 12 && this.b >= 11) {
+            //     this.fallingObjects.push(new Bomb(random(0, innerWidth), 0, (Math.floor(Math.random() * Math.floor(this.c )) + (this.b )), 70, 50));               
+            // }
+           
             if(numb >= 45){
-                this.fallingObjects.push(new GreenPear(random(0, innerWidth), 0, (Math.floor(Math.random() * Math.floor(this.c += 0.01)) + (this.b+= 0.01)), 70, 50));
+                this.fallingObjects.push(new GreenPear(random(0, innerWidth), 0, (Math.floor(Math.random() * Math.floor(this.c )) + (this.b )), 70, 50));
             } else if(numb >= 17 && numb <= 44) {
-                this.fallingObjects.push(new RottenPear(random(0, innerWidth), 0, (Math.floor(Math.random() * Math.floor(this.c+= 0.01)) + (this.b+= 0.01)), 70, 50));
+                this.fallingObjects.push(new RottenPear(random(0, innerWidth), 0, (Math.floor(Math.random() * Math.floor(this.c )) + (this.b )), 70, 50));
             } else if(numb >= 11 && numb <= 16){
-                this.fallingObjects.push(new Bomb(random(0, innerWidth), 0, (Math.floor(Math.random() * Math.floor(this.c+= 0.01)) + (this.b+= 0.01)), 70, 50));
+                this.fallingObjects.push(new Bomb(random(0, innerWidth), 0, (Math.floor(Math.random() * Math.floor(this.c )) + (this.b )), 70, 50));
             } else if(numb >= 5 && numb <= 10) {
-                this.fallingObjects.push(new Star(random(0, innerWidth), 0, (Math.floor(Math.random() * Math.floor(this.c+= 0.01)) + (this.b+= 0.01)), 70, 50));
+                this.fallingObjects.push(new Star(random(0, innerWidth), 0, (Math.floor(Math.random() * Math.floor(this.c )) + (this.b )), 70, 50));
             } else {
-                this.fallingObjects.push(new Heart(random(0, innerWidth), 0, (Math.floor(Math.random() * Math.floor(this.c+= 0.01)) + (this.b+= 0.01)), 70, 50));
+                this.fallingObjects.push(new Heart(random(0, innerWidth), 0, (Math.floor(Math.random() * Math.floor(this.c )) + (this.b )), 70, 50));
             }
             
+            
+            // console.log(this.spawnRate);
+            console.log(this.c);
+            console.log(this.b);
+
             
 
             // let time2 = Date.now()

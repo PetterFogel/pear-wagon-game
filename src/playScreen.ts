@@ -12,6 +12,7 @@ class PlayScreen {
     // private lastSpeed: number
     private c: number
     private b: number
+    private bombPhase: boolean
 
     constructor(pearWagon: IGameState) {
         this.pearWagon = pearWagon;
@@ -23,6 +24,7 @@ class PlayScreen {
         // this.lastSpeed = -1
         this.c = 3
         this.b = 2
+        this.bombPhase = false
         
         this.player = new Player
         this.scoreHp = new ScoreHpDisplay(this.pearWagon)
@@ -31,31 +33,47 @@ class PlayScreen {
     update() {
         let time = Date.now();
         if (time > (this.lastSpawn + this.spawnRate)){
-            if (this.spawnRate >= 50) { this.spawnRate -= 0.25 }
+            if (this.spawnRate >= 50) { 
+                this.spawnRate -= 0.25 
+            }
             
             this.lastSpawn = time;
             let numb = (Math.floor(Math.random() * Math.floor(99)) + 1)
             
-            if (this.c <= 12 && this.b <= 11) {
-                this.c += 0.01
-                this.b+= 0.01
+            if (this.c <= 6 && this.b <= 5) {
+                this.c += 0.03
+                this.b += 0.01
+            } else {
+                this.bombPhase = true;
+                this.c *= 0.8;
+                this.b *= 0.8;
+            }
+
+            if(this.c >= 5 || this.b >= 4) {
+                this.bombPhase = false
+            }
+
+            if(this.bombPhase) {
+                this.fallingObjects.push(new Bomb(random(0, innerWidth), 0, (Math.floor(Math.random() * Math.floor(this.c )) + (this.b )), 70, 50));
+            } else {
+                if(numb >= 45){
+                    this.fallingObjects.push(new GreenPear(random(0, innerWidth), 0, (Math.floor(Math.random() * Math.floor(this.c )) + (this.b )), 70, 50));
+                } else if(numb >= 17 && numb <= 44) {
+                    this.fallingObjects.push(new RottenPear(random(0, innerWidth), 0, (Math.floor(Math.random() * Math.floor(this.c )) + (this.b )), 70, 50));
+                } else if(numb >= 11 && numb <= 16){
+                    this.fallingObjects.push(new Bomb(random(0, innerWidth), 0, (Math.floor(Math.random() * Math.floor(this.c )) + (this.b )), 70, 50));
+                } else if(numb >= 5 && numb <= 10) {
+                    this.fallingObjects.push(new Star(random(0, innerWidth), 0, (Math.floor(Math.random() * Math.floor(this.c )) + (this.b )), 70, 50));
+                } else {
+                    this.fallingObjects.push(new Heart(random(0, innerWidth), 0, (Math.floor(Math.random() * Math.floor(this.c )) + (this.b )), 70, 50));
+                }
             }
 
             // if (this.c >= 12 && this.b >= 11) {
             //     this.fallingObjects.push(new Bomb(random(0, innerWidth), 0, (Math.floor(Math.random() * Math.floor(this.c )) + (this.b )), 70, 50));               
             // }
            
-            if(numb >= 45){
-                this.fallingObjects.push(new GreenPear(random(0, innerWidth), 0, (Math.floor(Math.random() * Math.floor(this.c )) + (this.b )), 70, 50));
-            } else if(numb >= 17 && numb <= 44) {
-                this.fallingObjects.push(new RottenPear(random(0, innerWidth), 0, (Math.floor(Math.random() * Math.floor(this.c )) + (this.b )), 70, 50));
-            } else if(numb >= 11 && numb <= 16){
-                this.fallingObjects.push(new Bomb(random(0, innerWidth), 0, (Math.floor(Math.random() * Math.floor(this.c )) + (this.b )), 70, 50));
-            } else if(numb >= 5 && numb <= 10) {
-                this.fallingObjects.push(new Star(random(0, innerWidth), 0, (Math.floor(Math.random() * Math.floor(this.c )) + (this.b )), 70, 50));
-            } else {
-                this.fallingObjects.push(new Heart(random(0, innerWidth), 0, (Math.floor(Math.random() * Math.floor(this.c )) + (this.b )), 70, 50));
-            }
+
             
             
             // console.log(this.spawnRate);

@@ -29,7 +29,7 @@ class PearWagon implements IGameState {
         // console.log(this.gameState);
         switch (this.gameState) {
             case "start": {
-                this.startScreen.update();
+                this.startScreen.update();    
                 break;
             }
             case "play": {

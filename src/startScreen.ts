@@ -4,6 +4,8 @@ class StartScreen {
     private pearWagon: IGameState
     private playButton: Button 
     private howToButton: Button
+    private mouseSteering: Button
+    private arrowSteering: Button
     private buttons:Button[]
     
     
@@ -11,9 +13,13 @@ class StartScreen {
         this.pearWagon = pearWagon;
         this.playButton = new Button(0, 0, 300, 150, "rgb(9, 232, 18)");
         this.howToButton = new Button(0, 0, 300, 150, "rgb(9, 232, 18)");
+        this.mouseSteering = new Button(0, 0, 50, 50, "rgb(9, 232, 18)");
+        this.arrowSteering = new Button(0, 0, 50, 50, "rgb(9, 232, 18)");
         this.buttons = [];
         this.buttons.push(this.playButton);
         this.buttons.push(this.howToButton);
+        this.buttons.push(this.mouseSteering);
+        this.buttons.push(this.arrowSteering);
     }
     
     update() {          
@@ -25,6 +31,12 @@ class StartScreen {
         this.howToButton.x = innerWidth / 2 + 50;
         this.howToButton.y = innerHeight / 2 -75;
 
+        this.mouseSteering.x = innerWidth / 100 * 25;
+        this.mouseSteering.y = innerHeight / 100 * 70;
+
+        this.arrowSteering.x = innerWidth / 100 * 25;
+        this.arrowSteering.y = innerHeight / 100 * 80;
+
         const playWasClicked = this.playButton.update();
         if (playWasClicked) {
             this.pearWagon.setNewGameState("play");
@@ -35,6 +47,26 @@ class StartScreen {
             this.pearWagon.setNewGameState("how");
         }
 
+        // const mouseWasClicked = this.player.mouseControl();
+        const mouseWasClicked = this.mouseSteering.update();
+        if(mouseWasClicked) {
+            pearWagon.isMouseSteering = true
+        }
+        
+        const keysWasClicked = this.arrowSteering.update();
+        if(keysWasClicked) {
+            pearWagon.isMouseSteering = false;
+        }
+
+        if(pearWagon.isMouseSteering){
+            console.log('mousesteering')
+            this.arrowSteering.color = '#a6a6a6';
+            this.mouseSteering.color = "rgb(9, 232, 18)";
+        } else {
+            console.log('arrowsteering')
+            this.arrowSteering.color = "rgb(9, 232, 18)";
+            this.mouseSteering.color = '#a6a6a6';
+        }
         // ver.2 
 
         // rectMode(CENTER);
@@ -48,23 +80,6 @@ class StartScreen {
     draw() {
         push();
         background(239, 35, 35);
-
-        // TEST PÄRON
-        // noStroke();
-        // fill(9, 232, 18)
-        // ellipse(200, 180, 100)
-        // fill(9, 232, 18)
-        // ellipse(225, 190, 100)
-
-        // fill(9, 232, 18)
-        // triangle(290, 35, 160, 150, 275, 190)
-
-        // fill(116, 60, 28)
-        // triangle(290, 35, 300, 10, 315, 10)
-
-        /* triangle(top, left, right), ellipse(x, y, w) */
-
-        //ver.1 
 
         stroke(1);
         strokeWeight(1)
@@ -88,32 +103,16 @@ class StartScreen {
         strokeWeight(3);
         text("How to play?", this.howToButton.x + 35, innerHeight / 2 + 15);
 
+        strokeWeight(1);
+        this.mouseSteering.draw();
+        textSize(25)
+        text("Mouse", this.mouseSteering.x + 60, this.mouseSteering.y + 40);
+        
+        this.arrowSteering.draw();
+        textSize(25)
+        text("Arrow Keys", this.arrowSteering.x + 60, this.arrowSteering.y + 40);
+
         noStroke();
-
-        //ver.2
-
-        // stroke(1);
-        // strokeWeight(1)
-        // fill(255);
-        // textStyle("italic")
-        // textSize(70);
-        // textFont('Helvetica');
-        // textAlign(CENTER, CENTER);
-        // text("Pear Wagon", innerWidth / 100 * 50, innerHeight / 100 * 20);
-        
-        
-        // this.playButton.draw();
-        // fill(255);
-        // textSize(40);
-        // strokeWeight(3);
-        // text("Let's Play!", this.playButton.x, this.playButton.y);
-        
-        // strokeWeight(1);
-        // this.howToButton.draw();
-        // fill(255)
-        // textSize(40)
-        // strokeWeight(3);
-        // text("How to play?", this.howToButton.x, this.howToButton.y);
         pop();
 
     }

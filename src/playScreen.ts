@@ -77,8 +77,8 @@ class PlayScreen {
             
             
             // console.log(this.spawnRate);
-            console.log(this.c);
-            console.log(this.b);
+            // console.log(this.c);
+            // console.log(this.b);
 
             
 

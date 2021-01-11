@@ -7,6 +7,7 @@ class StartScreen {
     private mouseSteering: Button
     private arrowSteering: Button
     private buttons:Button[]
+
     
     
     constructor(pearWagon: IGameState) {
@@ -20,6 +21,13 @@ class StartScreen {
         this.buttons.push(this.howToButton);
         this.buttons.push(this.mouseSteering);
         this.buttons.push(this.arrowSteering);
+    }
+
+    checkHighscore(){
+        let test: any = getItem('points');
+        let value = JSON.parse(test);
+        console.log(value);
+        
     }
     
     update() {          
@@ -59,11 +67,11 @@ class StartScreen {
         }
 
         if(pearWagon.isMouseSteering){
-            console.log('mousesteering')
+            // console.log('mousesteering')
             this.arrowSteering.color = '#a6a6a6';
             this.mouseSteering.color = "rgb(9, 232, 18)";
         } else {
-            console.log('arrowsteering')
+            // console.log('arrowsteering')
             this.arrowSteering.color = "rgb(9, 232, 18)";
             this.mouseSteering.color = '#a6a6a6';
         }
@@ -75,6 +83,8 @@ class StartScreen {
 
         // this.howToButton.x = innerWidth / 100 * 70;
         // this.howToButton.y = innerHeight / 100 * 50;
+
+        this.checkHighscore();
     }
 
     draw() {

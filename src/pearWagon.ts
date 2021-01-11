@@ -41,7 +41,7 @@ class PearWagon implements IGameState {
                 break;
             }
             case "over": {
-                this.gameOverScreen.update();
+                this.gameOverScreen.update(this.playScreen.scoreHp.points);
                 break;
             }
             case "how": {

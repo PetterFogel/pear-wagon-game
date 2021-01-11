@@ -54,14 +54,14 @@ function preload() {
         bomb: loadSound('assets/sounds/bomb.wav'),
         juicy: loadSound('assets/sounds/juicy.wav'),
         intro: loadSound('assets/sounds/intro.wav'),
-        intro: loadSound('assets/sounds/1.wav'),
-        intro: loadSound('assets/sounds/2.wav'),
-        intro: loadSound('assets/sounds/3.wav'),
-        intro: loadSound('assets/sounds/4.wav'),
-        intro: loadSound('assets/sounds/5.wav'),
-        intro: loadSound('assets/sounds/6.wav'),
-        intro: loadSound('assets/sounds/7.wav'),
-        intro: loadSound('assets/sounds/8.wav')
+        sound1: loadSound('assets/sounds/1.wav'),
+        sound2: loadSound('assets/sounds/2.wav'),
+        sound3: loadSound('assets/sounds/3.wav'),
+        sound4: loadSound('assets/sounds/4.wav'),
+        sound5: loadSound('assets/sounds/5.wav'),
+        sound6: loadSound('assets/sounds/6.wav'),
+        sound7: loadSound('assets/sounds/7.wav'),
+        sound8: loadSound('assets/sounds/8.wav')
     }
     
     // Tyvärr har jag inte fått till den globala typningen för

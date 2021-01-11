@@ -147,10 +147,12 @@ class PlayScreen {
 
                     this.fallingObjects.splice(index, 1);
                     this.scoreHp.setDoublePoints();
+                    sounds.star.play();
 
                 } else {
                     this.fallingObjects.splice(index, 1);
                     this.scoreHp.increaseHP();
+                    sounds.heart.play();
                 }
             }
 

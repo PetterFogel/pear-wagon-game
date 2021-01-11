@@ -11,7 +11,7 @@ class GameOverScreen {
 
     update() {
         this.playAgain.x = innerWidth / 2 - 150;
-        this.playAgain.y = innerHeight / 2 + 165;
+        this.playAgain.y = innerHeight / 2 + 80;
         
         const buttonWasClicked = this.playAgain.update();
         if (buttonWasClicked) {
@@ -35,9 +35,9 @@ class GameOverScreen {
         strokeWeight(4);
         stroke(0, 0, 0);       
         rectMode(CENTER); 
-        rect(innerWidth / 2, innerHeight / 2, 700, 700, 30);
+        rect(innerWidth / 2, innerHeight / 2, 700, 500, 30);
         fill(255, 255, 255);
-        rect(innerWidth / 2, innerHeight / 2, 350, 250, 30);
+        rect(innerWidth / 2, innerHeight / 2 -40, 400, 200, 30);
         
         //play button
         rectMode(CORNER);
@@ -54,19 +54,20 @@ class GameOverScreen {
         //displays score points
         textSize(70);
         textAlign(CENTER);
-        text(points, innerWidth / 2, innerHeight / 2 + 30);
+        text(points, innerWidth / 2, innerHeight / 2 + 10);
         fill('black');
 
         //button text
         strokeWeight(1.5);
         textSize(40);
         textAlign(CENTER);
-        text('Play Again', innerWidth / 2, innerHeight / 2 + 625 / 2.5);
+        text('Play Again', innerWidth / 2, innerHeight / 2 + 425 / 2.5);
 
         //game over title text
-        textSize(80);
+        textSize(60);
+        // stroke(1);
         textAlign(CENTER, TOP);
-        text('Game Over',innerWidth / 2, innerHeight / 2 - 700 / 2.5);
+        text('GAME OVER',innerWidth / 2, innerHeight / 2 - 550 / 2.5);
         pop();
     }
 

@@ -12,9 +12,12 @@ interface Images {
     tree: p5.Image;
 }
 interface Sounds {
-    bomb: p5.SoundFile;
-    juicy: p5.SoundFile;
     intro: p5.SoundFile;
+    greenpear: p5.SoundFile;
+    rottenpear: p5.SoundFile;
+    star: p5.SoundFile;
+    heart: p5.SoundFile;
+    bomb: p5.SoundFile;
 }
 
 //---- GLOBAL VARIABLES ----//
@@ -43,9 +46,12 @@ function preload() {
     }
 
     sounds = {
-        bomb: loadSound('assets/bomb.wav'),
-        juicy: loadSound('assets/juicy.wav'),
-        intro: loadSound('assets/intro.wav')
+        intro: loadSound('assets/sounds/intro.wav'),
+        greenpear: loadSound('assets/sounds/greenpear.wav'),
+        rottenpear: loadSound('assets/sounds/rottenpear.wav'),
+        star: loadSound('assets/sounds/star.wav'),
+        heart: loadSound('assets/sounds/heart.wav'),
+        bomb: loadSound('assets/sounds/bomb.wav')
     }
     
     // Tyvärr har jag inte fått till den globala typningen för

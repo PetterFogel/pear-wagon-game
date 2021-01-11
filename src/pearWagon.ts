@@ -16,7 +16,9 @@ class PearWagon implements IGameState {
         this.gameOverScreen = new GameOverScreen(this);
         this.howToPlayScreen = new HowToPlayScreen(this);        
         this.gameState = "start";
+
         this.isMouseSteering = true;
+
     }
 
     public setNewGameState (gamestate: "start" | "over" | "play" | "how") {

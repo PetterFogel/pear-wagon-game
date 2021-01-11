@@ -43,9 +43,9 @@ function preload() {
     }
 
     sounds = {
-        bomb: loadSound('assets/bomb.wav'),
-        juicy: loadSound('assets/juicy.wav'),
-        intro: loadSound('assets/intro.wav')
+        bomb: loadSound('assets/sounds/bomb.wav'),
+        juicy: loadSound('assets/sounds/juicy.wav'),
+        intro: loadSound('assets/sounds/intro.wav')
     }
     
     // Tyvärr har jag inte fått till den globala typningen för

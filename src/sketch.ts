@@ -15,6 +15,14 @@ interface Sounds {
     bomb: p5.SoundFile;
     juicy: p5.SoundFile;
     intro: p5.SoundFile;
+    sound1: p5.SoundFile;
+    sound2: p5.SoundFile;
+    sound3: p5.SoundFile;
+    sound4: p5.SoundFile;
+    sound5: p5.SoundFile;
+    sound6: p5.SoundFile;
+    sound7: p5.SoundFile;
+    sound8: p5.SoundFile;
 }
 
 //---- GLOBAL VARIABLES ----//
@@ -45,7 +53,15 @@ function preload() {
     sounds = {
         bomb: loadSound('assets/sounds/bomb.wav'),
         juicy: loadSound('assets/sounds/juicy.wav'),
-        intro: loadSound('assets/sounds/intro.wav')
+        intro: loadSound('assets/sounds/intro.wav'),
+        intro: loadSound('assets/sounds/1.wav'),
+        intro: loadSound('assets/sounds/2.wav'),
+        intro: loadSound('assets/sounds/3.wav'),
+        intro: loadSound('assets/sounds/4.wav'),
+        intro: loadSound('assets/sounds/5.wav'),
+        intro: loadSound('assets/sounds/6.wav'),
+        intro: loadSound('assets/sounds/7.wav'),
+        intro: loadSound('assets/sounds/8.wav')
     }
     
     // Tyvärr har jag inte fått till den globala typningen för

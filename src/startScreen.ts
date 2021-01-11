@@ -4,6 +4,8 @@ class StartScreen {
     private pearWagon: IGameState
     private playButton: Button 
     private howToButton: Button
+    private mouseSteering: Button
+    private arrowSteering: Button
     private buttons:Button[]
     
     
@@ -11,9 +13,13 @@ class StartScreen {
         this.pearWagon = pearWagon;
         this.playButton = new Button(0, 0, 300, 150, "rgb(9, 232, 18)");
         this.howToButton = new Button(0, 0, 300, 150, "rgb(9, 232, 18)");
+        this.mouseSteering = new Button(0, 0, 50, 50, "rgb(9, 232, 18)");
+        this.arrowSteering = new Button(0, 0, 50, 50, "rgb(9, 232, 18)");
         this.buttons = [];
         this.buttons.push(this.playButton);
         this.buttons.push(this.howToButton);
+        this.buttons.push(this.mouseSteering);
+        this.buttons.push(this.arrowSteering);
     }
     
     update() {          
@@ -25,6 +31,12 @@ class StartScreen {
         this.howToButton.x = innerWidth / 2 + 50;
         this.howToButton.y = innerHeight / 2 -75;
 
+        this.mouseSteering.x = innerWidth / 100 * 25;
+        this.mouseSteering.y = innerHeight / 100 * 70;
+
+        this.arrowSteering.x = innerWidth / 100 * 25;
+        this.arrowSteering.y = innerHeight / 100 * 80;
+
         const playWasClicked = this.playButton.update();
         if (playWasClicked) {
             this.pearWagon.setNewGameState("play");
@@ -34,6 +46,17 @@ class StartScreen {
         if (howToWasClicked) {
             this.pearWagon.setNewGameState("how");
         }
+
+        const mouseWasClicked = this.player.mouseControl();
+        if(mouseWasClicked) {
+            // console.log("Mus");
+        }
+        
+        const keysWasClicked = this.arrowSteering.update();
+        if(keysWasClicked) {
+            // console.log("Tagent");
+        }
+
 
         // ver.2 
 
@@ -87,6 +110,15 @@ class StartScreen {
         textSize(40)
         strokeWeight(3);
         text("How to play?", this.howToButton.x + 35, innerHeight / 2 + 15);
+
+        strokeWeight(1);
+        this.mouseSteering.draw();
+        textSize(25)
+        text("Mouse", this.mouseSteering.x + 60, this.mouseSteering.y + 40);
+        
+        this.arrowSteering.draw();
+        textSize(25)
+        text("Arrow Keys", this.arrowSteering.x + 60, this.arrowSteering.y + 40);
 
         noStroke();
 

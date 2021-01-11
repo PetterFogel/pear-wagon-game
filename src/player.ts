@@ -29,6 +29,15 @@ class Player {
         } else {
             this.x = mouseX + this.offset;
         }
+    }
+
+    mouseControl() {
+        console.log("mus")
+    }
+
+    arrowKeysControl() {
+        console.log("tagent")
+    }
 
         // if (this.x >= innerWidth) {
         //     this.x = innerWidth - 75;
@@ -37,7 +46,7 @@ class Player {
         //     this.x = innerWidth + 75;
         //     this.offset = this.x;
         // }
-    }
+        //}
     
     // steering(event: KeyboardEvent) {
     //     this.x = innerWidth / 2;
@@ -70,7 +79,6 @@ class Player {
         
         image(images.wagon, this.x, this.y, this.width, this.height);
 
-        pop();
-
+        pop(); 
     }
 }

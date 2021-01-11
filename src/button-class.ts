@@ -19,8 +19,8 @@ class Button {
   }
   
   update() {
-    if ((mouseX > this.x) && (mouseX < this.x + 300) &&
-      (mouseY > this.y) && (mouseY < this.y + 150)) {
+    if ((mouseX > this.x) && (mouseX < this.x + this.w) &&
+      (mouseY > this.y) && (mouseY < this.y + this.h)) {
       this.hover = true;
       
       if (this.prevMouseIsPressed && !mouseIsPressed) {

@@ -13,15 +13,14 @@ interface Images {
 }
 interface Sounds {
     bomb: p5.SoundFile;
-    juicy: p5.SoundFile;
+    greenpear: p5.SoundFile;
     intro: p5.SoundFile;
     sound1: p5.SoundFile;
-    sound2: p5.SoundFile;
+    rottenpear: p5.SoundFile;
     sound3: p5.SoundFile;
     sound4: p5.SoundFile;
     sound5: p5.SoundFile;
     sound6: p5.SoundFile;
-    sound7: p5.SoundFile;
     sound8: p5.SoundFile;
 }
 
@@ -52,15 +51,14 @@ function preload() {
 
     sounds = {
         bomb: loadSound('assets/sounds/bomb.wav'),
-        juicy: loadSound('assets/sounds/juicy.wav'),
         intro: loadSound('assets/sounds/intro.wav'),
         sound1: loadSound('assets/sounds/1.wav'),
-        sound2: loadSound('assets/sounds/2.wav'),
+        rottenpear: loadSound('assets/sounds/rottenpear.wav'),
         sound3: loadSound('assets/sounds/3.wav'),
         sound4: loadSound('assets/sounds/4.wav'),
         sound5: loadSound('assets/sounds/5.wav'),
         sound6: loadSound('assets/sounds/6.wav'),
-        sound7: loadSound('assets/sounds/7.wav'),
+        greenpear: loadSound('assets/sounds/greenpear.wav'),
         sound8: loadSound('assets/sounds/8.wav')
     }
     

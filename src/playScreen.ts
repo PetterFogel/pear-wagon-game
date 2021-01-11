@@ -128,12 +128,14 @@ class PlayScreen {
                     this.fallingObjects.splice(index, 1);
                     this.scoreHp.addPoints();
                     // console.log(this.scoreHp.points);
-                    sounds.juicy.play();
+                    sounds.greenpear.play();
 
                 } else if (drop instanceof RottenPear){
 
                     this.fallingObjects.splice(index, 1);
                     this.scoreHp.decreaseHP('rottenPear');
+                    sounds.rottenpear.play();
+                    
 
                 } else if (drop instanceof Bomb){
 

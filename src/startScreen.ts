@@ -47,17 +47,26 @@ class StartScreen {
             this.pearWagon.setNewGameState("how");
         }
 
-        const mouseWasClicked = this.player.mouseControl();
+        // const mouseWasClicked = this.player.mouseControl();
+        const mouseWasClicked = this.mouseSteering.update();
         if(mouseWasClicked) {
-            // console.log("Mus");
+            pearWagon.isMouseSteering = true
         }
         
         const keysWasClicked = this.arrowSteering.update();
         if(keysWasClicked) {
-            // console.log("Tagent");
+            pearWagon.isMouseSteering = false;
         }
 
-
+        if(pearWagon.isMouseSteering){
+            console.log('mousesteering')
+            this.arrowSteering.color = '#a6a6a6';
+            this.mouseSteering.color = "rgb(9, 232, 18)";
+        } else {
+            console.log('arrowsteering')
+            this.arrowSteering.color = "rgb(9, 232, 18)";
+            this.mouseSteering.color = '#a6a6a6';
+        }
         // ver.2 
 
         // rectMode(CENTER);
@@ -71,23 +80,6 @@ class StartScreen {
     draw() {
         push();
         background(239, 35, 35);
-
-        // TEST PÄRON
-        // noStroke();
-        // fill(9, 232, 18)
-        // ellipse(200, 180, 100)
-        // fill(9, 232, 18)
-        // ellipse(225, 190, 100)
-
-        // fill(9, 232, 18)
-        // triangle(290, 35, 160, 150, 275, 190)
-
-        // fill(116, 60, 28)
-        // triangle(290, 35, 300, 10, 315, 10)
-
-        /* triangle(top, left, right), ellipse(x, y, w) */
-
-        //ver.1 
 
         stroke(1);
         strokeWeight(1)
@@ -121,31 +113,6 @@ class StartScreen {
         text("Arrow Keys", this.arrowSteering.x + 60, this.arrowSteering.y + 40);
 
         noStroke();
-
-        //ver.2
-
-        // stroke(1);
-        // strokeWeight(1)
-        // fill(255);
-        // textStyle("italic")
-        // textSize(70);
-        // textFont('Helvetica');
-        // textAlign(CENTER, CENTER);
-        // text("Pear Wagon", innerWidth / 100 * 50, innerHeight / 100 * 20);
-        
-        
-        // this.playButton.draw();
-        // fill(255);
-        // textSize(40);
-        // strokeWeight(3);
-        // text("Let's Play!", this.playButton.x, this.playButton.y);
-        
-        // strokeWeight(1);
-        // this.howToButton.draw();
-        // fill(255)
-        // textSize(40)
-        // strokeWeight(3);
-        // text("How to play?", this.howToButton.x, this.howToButton.y);
         pop();
 
     }

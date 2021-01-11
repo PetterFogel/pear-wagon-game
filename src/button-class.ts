@@ -3,7 +3,7 @@ class Button {
   public y: number
   private w: number
   private h: number
-  private color: string
+  public color: string
   private hover: boolean;
   //private br: number; //border-radius
   private prevMouseIsPressed: boolean;

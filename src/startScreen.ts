@@ -24,10 +24,8 @@ class StartScreen {
     }
 
     checkHighscore(){
-        let test: any = getItem('points');
-        let value = JSON.parse(test);
-        console.log(value);
-        
+        let test = getItem('points') as string[];
+        console.log(test.map(point => Number(point)));
     }
     
     update() {          
@@ -121,6 +119,8 @@ class StartScreen {
         this.arrowSteering.draw();
         textSize(25)
         text("Arrow Keys", this.arrowSteering.x + 60, this.arrowSteering.y + 40);
+
+
 
         noStroke();
         pop();

@@ -2,13 +2,15 @@
 class GameOverScreen {
     private pearWagon: IGameState;
     private playAgain: Button;
-    private scoreList: string[]
+    private scoreList: number[]
 
 
     constructor(pearWagon: IGameState) {
         this.pearWagon = pearWagon;
         this.playAgain = new Button(innerWidth / 2, innerHeight / 2, 300, 150,  "limegreen");
-        this.scoreList = [];
+        let score = (getItem('points') || []) as string[];
+        this.scoreList = score.map(point => Number(point));
+        storeItem('points', this.scoreList);
     }
 
     update(points: number) {
@@ -18,7 +20,7 @@ class GameOverScreen {
         const buttonWasClicked = this.playAgain.update();
         if (buttonWasClicked) {
             this.pearWagon.setNewGameState("start");
-            storeItem('points', this.scoreList.push(JSON.stringify(points)));
+            this.scoreList.push(points);
         }
     }
 

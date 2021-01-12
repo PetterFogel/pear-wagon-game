@@ -30,10 +30,10 @@ class GameOverScreen {
     draw(points: number) {
         push();
         cursor(ARROW);
-        background(0,191,255);
+        background(136, 207, 248);
         
         //red and white square in center
-        fill('red');
+        fill(239, 35, 35);
         strokeWeight(4);
         stroke(0, 0, 0);       
         rectMode(CENTER); 

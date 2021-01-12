@@ -34,7 +34,7 @@ class PlayScreen {
         let time = Date.now();
         if (time > (this.lastSpawn + this.spawnRate)){
             if (this.spawnRate >= 50) { 
-                this.spawnRate -= 0.25 
+                this.spawnRate -= 0.15 
             }
             
             this.lastSpawn = time;
@@ -147,7 +147,7 @@ class PlayScreen {
 
                     this.fallingObjects.splice(index, 1);
                     this.scoreHp.setDoublePoints();
-                    sounds.star.setVolume(0.5);
+                    sounds.star.setVolume(0.2);
                     sounds.star.play();
 
                 } else {
@@ -172,11 +172,17 @@ class PlayScreen {
         // this.drop.draw();
         // this.player.draw();
         
-        image(images.cloud1, innerWidth / 100 * 8, 350, 362, 154);
-        image(images.cloud2, innerWidth / 100 * 65, 300, 362, 154);
+        // image(images.cloud1, innerWidth / 100 * 8, 350, 362, 154);
+        // image(images.cloud2, innerWidth / 100 * 65, 300, 362, 154);
 
-        // imageMode(CENTER);
-        image(images.tree, innerWidth / 2 - 1050  , innerHeight / 2 -1500, 2100, 2350);
+        imageMode(CENTER);
+        image(images.cloud1, innerWidth / 5 , innerHeight / 3, 362, 154);
+        image(images.cloud2, innerWidth / 1.20 , innerHeight / 3, 362, 154);
+
+        // image(images.tree, innerWidth / 2 - 1050  , innerHeight / 2 -1500, 2100, 2350);
+
+        // image(images.tree, innerWidth / 2, innerHeight / 2 - 300, innerWidth / 100 * 130, innerHeight / 100 * 250);
+        image(images.tree, innerWidth / 2, innerHeight / 4, innerWidth / 100 * 120, innerHeight / 100 * 250);
         
         for(let i = 0; i < this.fallingObjects.length; i++){
             this.fallingObjects[i].draw();

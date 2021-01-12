@@ -98,7 +98,7 @@ class StartScreen {
         textStyle("italic")
         textSize(70);
         textFont('Helvetica')
-        text("Pear Wagon", innerWidth / 2 - 190, innerHeight / 2 - 200);
+        text("Pear Wagon", innerWidth / 2 - 190, innerHeight / 2 - 230);
         
         
         this.playButton.draw();
@@ -124,11 +124,22 @@ class StartScreen {
         text("Arrow Keys", this.arrowSteering.x + 60, this.arrowSteering.y + 40);
 
         textSize(30)
-        text("Highscore:", innerWidth / 100 * 55, innerHeight / 100 * 80)
-        text(this.highScore, innerWidth / 100 * 70, innerHeight / 100 * 80)
+        text("Highscore:", innerWidth / 100 * 50, innerHeight / 100 * 80)
+        text(this.highScore, innerWidth / 100 * 65, innerHeight / 100 * 80)
 
-        image(images.greenPear, innerWidth / 100 * 10, innerHeight / 100 * 10, 200, 200);
-        image(images.rottenPear, innerWidth / 100 * 75, innerHeight / 100 * 10, 200, 200);
+
+        // Pears
+        imageMode(CENTER);
+        // angleMode(DEGREES);
+        // translate (innerWidth / 2, innerHeight / 2);
+        // rotate(10);
+        // image(images.greenPear, innerWidth / 2 -400, innerHeight / 7, 150, 150);
+        // imageMode(CORNER);
+        // image(images.rottenPear, innerWidth / 2 + 190, innerHeight / 7, 150, 150);
+        image(images.greenPear, innerWidth / 2 - 450, innerHeight / 2 - 260, 150, 150);
+        image(images.rottenPear, innerWidth / 2 + 450, innerHeight / 2 - 260, 150, 150);
+        // image(images.greenPear, innerWidth / 100 * 10, innerHeight / 100 * 10, 200, 200);
+        // image(images.rottenPear, innerWidth / 100 * 75, innerHeight / 100 * 10, 200, 200);
 
         noStroke();
         pop();

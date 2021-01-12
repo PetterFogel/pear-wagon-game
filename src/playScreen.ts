@@ -175,13 +175,16 @@ class PlayScreen {
         // image(images.cloud1, innerWidth / 100 * 8, 350, 362, 154);
         // image(images.cloud2, innerWidth / 100 * 65, 300, 362, 154);
 
+
+        // Clouds
         imageMode(CENTER);
-        image(images.cloud1, innerWidth / 5 , innerHeight / 3, 362, 154);
-        image(images.cloud2, innerWidth / 1.20 , innerHeight / 3, 362, 154);
+        image(images.cloud1, innerWidth / 5 , innerHeight / 2.5, 362, 154);
+        image(images.cloud2, innerWidth / 1.20 , innerHeight / 2.5, 362, 154);
 
         // image(images.tree, innerWidth / 2 - 1050  , innerHeight / 2 -1500, 2100, 2350);
 
         // image(images.tree, innerWidth / 2, innerHeight / 2 - 300, innerWidth / 100 * 130, innerHeight / 100 * 250);
+        // Tree
         image(images.tree, innerWidth / 2, innerHeight / 4, innerWidth / 100 * 120, innerHeight / 100 * 250);
         
         for(let i = 0; i < this.fallingObjects.length; i++){

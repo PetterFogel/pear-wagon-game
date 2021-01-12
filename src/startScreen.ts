@@ -123,7 +123,12 @@ class StartScreen {
         textSize(25)
         text("Arrow Keys", this.arrowSteering.x + 60, this.arrowSteering.y + 40);
 
+        textSize(30)
+        text("Highscore:", innerWidth / 100 * 55, innerHeight / 100 * 80)
+        text(this.highScore, innerWidth / 100 * 70, innerHeight / 100 * 80)
 
+        image(images.greenPear, innerWidth / 100 * 10, innerHeight / 100 * 10, 200, 200);
+        image(images.rottenPear, innerWidth / 100 * 75, innerHeight / 100 * 10, 200, 200);
 
         noStroke();
         pop();

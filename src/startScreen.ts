@@ -7,6 +7,7 @@ class StartScreen {
     private mouseSteering: Button
     private arrowSteering: Button
     private buttons:Button[]
+    private highScore: number
 
     
     
@@ -17,6 +18,7 @@ class StartScreen {
         this.mouseSteering = new Button(0, 0, 50, 50, "rgb(9, 232, 18)");
         this.arrowSteering = new Button(0, 0, 50, 50, "rgb(9, 232, 18)");
         this.buttons = [];
+        this.highScore = 0;
         this.buttons.push(this.playButton);
         this.buttons.push(this.howToButton);
         this.buttons.push(this.mouseSteering);
@@ -24,8 +26,9 @@ class StartScreen {
     }
 
     checkHighscore(){
-        let test = getItem('points') as string[];
-        console.log(test.map(point => Number(point)));
+        let test = (getItem('points') || []) as string[];
+        this.highScore = max(test.map(point => Number(point)));
+        console.log(this.highScore)
     }
     
     update() {          

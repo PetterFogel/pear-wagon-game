@@ -10,7 +10,6 @@ class GameOverScreen {
         this.playAgain = new Button(innerWidth / 2, innerHeight / 2, 300, 150,  "limegreen");
         let score = (getItem('points') || []) as string[];
         this.scoreList = score.map(point => Number(point));
-        storeItem('points', this.scoreList);
     }
 
     update(points: number) {
@@ -21,6 +20,7 @@ class GameOverScreen {
         if (buttonWasClicked) {
             this.pearWagon.setNewGameState("start");
             this.scoreList.push(points);
+            storeItem('points', this.scoreList);
         }
     }
 

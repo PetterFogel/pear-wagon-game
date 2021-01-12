@@ -68,12 +68,12 @@ class StartScreen {
 
         if(pearWagon.isMouseSteering){
             // console.log('mousesteering')
-            this.arrowSteering.color = '#a6a6a6';
+            this.arrowSteering.color = "darkgreen";
             this.mouseSteering.color = "rgb(9, 232, 18)";
         } else {
             // console.log('arrowsteering')
             this.arrowSteering.color = "rgb(9, 232, 18)";
-            this.mouseSteering.color = '#a6a6a6';
+            this.mouseSteering.color = "darkgreen";
         }
         // ver.2 
 

@@ -98,7 +98,7 @@ class StartScreen {
         textStyle("italic")
         textSize(70);
         textFont('Helvetica')
-        text("Pear Wagon", innerWidth / 2 - 190, innerHeight / 2 - 230);
+        text("Pear Wagon", innerWidth / 2 - 190, innerHeight / 2 - 165);
         
         
         this.playButton.draw();
@@ -136,8 +136,8 @@ class StartScreen {
         // image(images.greenPear, innerWidth / 2 -400, innerHeight / 7, 150, 150);
         // imageMode(CORNER);
         // image(images.rottenPear, innerWidth / 2 + 190, innerHeight / 7, 150, 150);
-        image(images.greenPear, innerWidth / 2 - 450, innerHeight / 2 - 260, 150, 150);
-        image(images.rottenPear, innerWidth / 2 + 450, innerHeight / 2 - 260, 150, 150);
+        image(images.heart, innerWidth / 2 - 450, innerHeight / 2 - 200, 150, 150);
+        image(images.greenPear, innerWidth / 2 + 450, innerHeight / 2 - 200, 150, 150);
         // image(images.greenPear, innerWidth / 100 * 10, innerHeight / 100 * 10, 200, 200);
         // image(images.rottenPear, innerWidth / 100 * 75, innerHeight / 100 * 10, 200, 200);
 

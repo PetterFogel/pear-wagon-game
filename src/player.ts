@@ -18,9 +18,9 @@ class Player {
             this.x = mouseX
         } else {
             if(keyIsDown(LEFT_ARROW)) {
-                this.x = this.x - 10;
+                this.x = this.x - 13;
             } else if (keyIsDown(RIGHT_ARROW)) {
-                this.x = this.x + 10;
+                this.x = this.x + 13;
             }
             if (this.x >= innerWidth) {
                 this.x = 75;

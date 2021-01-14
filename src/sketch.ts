@@ -42,7 +42,7 @@ function preload() {
         heart: loadImage('assets/images/heart.png'),
         cloud1: loadImage('assets/images/cloud1.png'),
         cloud2: loadImage('assets/images/cloud2.png'),
-        tree: loadImage('assets/images/tree1.png')
+        tree: loadImage('assets/images/tree.png')
     }
 
     sounds = {

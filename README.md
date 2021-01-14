@@ -7,8 +7,8 @@
 
 Hello hello testing testing.
 
-To get ready download repo then type: 
-"npm i -y"
+To get ready clone down and type: 
+"npm i"
 "npm start"
 
 *Gruppmedlemmar*  

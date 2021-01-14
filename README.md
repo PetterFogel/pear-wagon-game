@@ -12,13 +12,12 @@ To get ready download repo then type:
 "npm start"
 
 *Gruppmedlemmar*  
-Andreas Stanggren
-Anton MäenPää
-Hampus Olausson
-Jonas Glingert
-Petter Fogel
-Yohan Risteski
-
+Andreas Stanggren  
+Anton MäenPää  
+Hampus Olausson  
+Jonas Glingert  
+Petter Fogel  
+Yohan Risteski  
 
 [Demo](NETLIFY?)
 

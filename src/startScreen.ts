@@ -1,15 +1,11 @@
-
-
 class StartScreen {
-    private pearWagon: IGameState
-    private playButton: Button 
-    private howToButton: Button
-    private mouseSteering: Button
-    private arrowSteering: Button
-    private buttons:Button[]
-    private highScore: number
-
-    
+    private pearWagon: IGameState;
+    private playButton: Button;
+    private howToButton: Button;
+    private mouseSteering: Button;
+    private arrowSteering: Button;
+    private buttons:Button[];
+    private highScore: number;   
     
     constructor(pearWagon: IGameState) {
         this.pearWagon = pearWagon;
@@ -25,15 +21,12 @@ class StartScreen {
         this.buttons.push(this.arrowSteering);
     }
 
-    checkHighscore(){
+    checkHighscore() {
         let test = (getItem('points') || []) as string[];
         this.highScore = max(test.map(point => Number(point)));
-        console.log(this.highScore)
     }
     
-    update() {          
-        // ver.1 
-        
+    update() {         
         this.playButton.x = innerWidth / 2 - 350;
         this.playButton.y = innerHeight / 2 - 75;
 
@@ -56,10 +49,9 @@ class StartScreen {
             this.pearWagon.setNewGameState("how");
         }
 
-        // const mouseWasClicked = this.player.mouseControl();
         const mouseWasClicked = this.mouseSteering.update();
         if(mouseWasClicked) {
-            pearWagon.isMouseSteering = true
+            pearWagon.isMouseSteering = true;
         }
         
         const keysWasClicked = this.arrowSteering.update();
@@ -67,23 +59,13 @@ class StartScreen {
             pearWagon.isMouseSteering = false;
         }
 
-        if(pearWagon.isMouseSteering){
-            // console.log('mousesteering')
+        if(pearWagon.isMouseSteering) {
             this.arrowSteering.color = "darkgreen";
             this.mouseSteering.color = "rgb(9, 232, 18)";
         } else {
-            // console.log('arrowsteering')
             this.arrowSteering.color = "rgb(9, 232, 18)";
             this.mouseSteering.color = "darkgreen";
         }
-        // ver.2 
-
-        // rectMode(CENTER);
-        // this.playButton.x = innerWidth / 100 * 30;
-        // this.playButton.y = innerHeight / 100 * 50;
-
-        // this.howToButton.x = innerWidth / 100 * 70;
-        // this.howToButton.y = innerHeight / 100 * 50;
 
         this.checkHighscore();
     }
@@ -93,13 +75,12 @@ class StartScreen {
         background(239, 35, 35);
 
         stroke(1);
-        strokeWeight(1)
+        strokeWeight(1);
         fill(255);
-        textStyle("italic")
+        textStyle("italic");
         textSize(70);
-        textFont('Helvetica')
+        textFont('Helvetica');
         text("Pear Wagon", innerWidth / 2 - 190, innerHeight / 2 - 165);
-        
         
         this.playButton.draw();
         fill(255);
@@ -109,44 +90,30 @@ class StartScreen {
         
         strokeWeight(1);
         this.howToButton.draw();
-        fill(255)
-        textSize(40)
+        fill(255);
+        textSize(40);
         strokeWeight(3);
         text("How to play?", this.howToButton.x + 35, innerHeight / 2 + 15);
 
         strokeWeight(1);
         this.mouseSteering.draw();
-        textSize(25)
+        textSize(25);
         text("Mouse", this.mouseSteering.x + 60, this.mouseSteering.y + 40);
         
         this.arrowSteering.draw();
-        textSize(25)
+        textSize(25);
         text("Arrow Keys", this.arrowSteering.x + 60, this.arrowSteering.y + 40);
 
-        textSize(30)
-        text("Highscore:", innerWidth / 100 * 50, innerHeight / 100 * 80)
-        text(this.highScore, innerWidth / 100 * 65, innerHeight / 100 * 80)
-
+        textSize(30);
+        text("Highscore:", innerWidth / 100 * 50, innerHeight / 100 * 80);
+        text(this.highScore, innerWidth / 100 * 65, innerHeight / 100 * 80);
 
         // Pears
         imageMode(CENTER);
-        // angleMode(DEGREES);
-        // translate (innerWidth / 2, innerHeight / 2);
-        // rotate(10);
-        // image(images.greenPear, innerWidth / 2 -400, innerHeight / 7, 150, 150);
-        // imageMode(CORNER);
-        // image(images.rottenPear, innerWidth / 2 + 190, innerHeight / 7, 150, 150);
         image(images.heart, innerWidth / 2 - 450, innerHeight / 2 - 200, 150, 150);
         image(images.greenPear, innerWidth / 2 + 450, innerHeight / 2 - 200, 150, 150);
-        // image(images.greenPear, innerWidth / 100 * 10, innerHeight / 100 * 10, 200, 200);
-        // image(images.rottenPear, innerWidth / 100 * 75, innerHeight / 100 * 10, 200, 200);
 
         noStroke();
         pop();
-
     }
 }
-
-// https://p5js.org/reference/#/p5/createButton
-
-// createButton(label, [value])

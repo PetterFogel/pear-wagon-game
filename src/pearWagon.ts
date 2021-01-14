@@ -6,7 +6,7 @@ class PearWagon implements IGameState {
     private playScreen: PlayScreen;
     private howToPlayScreen: HowToPlayScreen;
     private gameOverScreen: GameOverScreen;
-    public isMouseSteering: boolean
+    public isMouseSteering: boolean;
    
     public gameState: "start" | "over" | "play" | "how";
 
@@ -16,13 +16,11 @@ class PearWagon implements IGameState {
         this.gameOverScreen = new GameOverScreen(this);
         this.howToPlayScreen = new HowToPlayScreen(this);        
         this.gameState = "start";
-
         this.isMouseSteering = true;
-
     }
 
     public setNewGameState (gamestate: "start" | "over" | "play" | "how") {
-        this.gameState = gamestate
+        this.gameState = gamestate;
 
         if (gamestate === "start") {
             this.playScreen = new PlayScreen(this);
@@ -30,7 +28,6 @@ class PearWagon implements IGameState {
     }
 
     public update() {
-        // console.log(this.gameState);
         switch (this.gameState) {
             case "start": {
                 this.startScreen.update();    

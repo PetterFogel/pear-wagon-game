@@ -5,15 +5,14 @@ class Button {
   private h: number
   public color: string
   private hover: boolean;
-  //private br: number; //border-radius
   private prevMouseIsPressed: boolean;
 
   constructor(x: number, y: number, w: number, h: number, color: string) {
-    this.x = x
-    this.y = y
-    this.w = w
-    this.h = h
-    this.color = color
+    this.x = x;
+    this.y = y;
+    this.w = w;
+    this.h = h;
+    this.color = color;
     this.hover = false;
     this.prevMouseIsPressed = false;
   }
@@ -22,7 +21,7 @@ class Button {
     if ((mouseX > this.x) && (mouseX < this.x + this.w) &&
       (mouseY > this.y) && (mouseY < this.y + this.h)) {
       this.hover = true;
-      
+
       if (this.prevMouseIsPressed && !mouseIsPressed) {
         return true;
       }

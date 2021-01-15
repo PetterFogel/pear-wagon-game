@@ -12,7 +12,6 @@ interface Images {
     tree: p5.Image;
 }
 interface Sounds {
-    intro: p5.SoundFile;
     greenpear: p5.SoundFile;
     rottenpear: p5.SoundFile;
     star: p5.SoundFile;
@@ -41,7 +40,6 @@ function preload() {
     }
 
     sounds = {
-        intro: loadSound('assets/sounds/intro.wav'),
         greenpear: loadSound('assets/sounds/greenpear.wav'),
         rottenpear: loadSound('assets/sounds/rottenpear.wav'),
         star: loadSound('assets/sounds/star.wav'),

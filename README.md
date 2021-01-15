@@ -7,18 +7,17 @@
 
 Hello hello testing testing.
 
-To get ready download repo then type: 
-"npm i -y"
+To get ready clone down and type: 
+"npm i"
 "npm start"
 
 *Gruppmedlemmar*  
-Andreas Stanggren
-Anton MäenPää
-Hampus Olausson
-Jonas Glingert
-Petter Fogel
-Yohan Risteski
-
+Andreas Stanggren  
+Anton MäenPää  
+Hampus Olausson  
+Jonas Glingert  
+Petter Fogel  
+Yohan Risteski  
 
 [Demo](NETLIFY?)
 

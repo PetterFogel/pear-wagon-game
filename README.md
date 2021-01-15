@@ -1,8 +1,7 @@
-## JavaScript Grund
+## JavaScript Grund, 60YHP
 # Slutprojekt
 
-**Pear Wagon**  
-**A P5JS School-projekt**    
+**Pear Wagon - A P5JS School-project**  
 **This is a game where you are supposed to catch pears**
 
 *documents-folder contains:*  
@@ -13,11 +12,11 @@
 
 We tried the game with noCursor() on playscreen, but the controls got bad when the cursor goes out of screen.
 
-To get ready clone down and type:  
-"npm i"  
-"npm start"  
+**To get ready clone down and type:**  
+**"npm i"**  
+**"npm start"**  
   
-Or just test it out on Netlify!
+**Or just test it out on Netlify!**  
  
 *Gruppmedlemmar*  
 Andreas Stanggren  
@@ -27,4 +26,4 @@ Jonas Glingert
 Petter Fogel  
 Yohan Risteski  
 
-[LINK TO GAME](https://pear-wagon.netlify.app/)
+[LINK TO GAME ON NETLIFY](https://pear-wagon.netlify.app/)

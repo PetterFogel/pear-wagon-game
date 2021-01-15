@@ -3,14 +3,23 @@
 
 **Pear Wagon**
 
-*Catch some pears yaoo*
+** A P5JS School projekt **
+** This is a game where you are supposed to catch pears **
 
-Hello hello testing testing.
+*documents-folder contains:*
+    *relevant documents such as presentation and UML-diagram*
+    *-figma-sketches*
+    *-prototype*
+    *-screens*
 
-To get ready clone down and type: 
-"npm i"
-"npm start"
+We tried the game with noCursor() on playscreen, but the controls got bad when the cursor goes out of screen.
 
+** To get ready clone down and type:  **
+** "npm i"  **
+** "npm start"  **
+  
+** Or just test it out on Netlify. **
+ 
 *Gruppmedlemmar*  
 Andreas Stanggren  
 Anton MäenPää  
@@ -19,8 +28,4 @@ Jonas Glingert
 Petter Fogel  
 Yohan Risteski  
 
-[Demo](NETLIFY?)
-
-* [Spelbeskrivning](https://www.google.se)
-* [Klassdiagram](https://www.google.se)
-* [etc...](https://www.google.se)
+[Demo](https://pear-wagon.netlify.app/)

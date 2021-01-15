@@ -9,8 +9,8 @@ class StartScreen {
     
     constructor(pearWagon: IGameState) {
         this.pearWagon = pearWagon;
-        this.playButton = new Button(0, 0, 300, 150, "rgb(9, 232, 18)");
-        this.howToButton = new Button(0, 0, 300, 150, "rgb(9, 232, 18)");
+        this.playButton = new Button(0, 0, 300, 150, "rgb(16, 168, 21)");
+        this.howToButton = new Button(0, 0, 300, 150, "rgb(16, 168, 21)");
         this.mouseSteering = new Button(0, 0, 50, 50, "rgb(9, 232, 18)");
         this.arrowSteering = new Button(0, 0, 50, 50, "rgb(9, 232, 18)");
         this.buttons = [];
@@ -60,11 +60,11 @@ class StartScreen {
         }
 
         if(pearWagon.isMouseSteering) {
-            this.arrowSteering.color = "darkgreen";
-            this.mouseSteering.color = "rgb(9, 232, 18)";
-        } else {
-            this.arrowSteering.color = "rgb(9, 232, 18)";
+            this.arrowSteering.color = "rgb(105,105,105)";
             this.mouseSteering.color = "darkgreen";
+        } else {
+            this.arrowSteering.color = "darkgreen";
+            this.mouseSteering.color = "rgb(105,105,105)";
         }
 
         this.checkHighscore();

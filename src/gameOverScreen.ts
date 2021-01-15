@@ -6,7 +6,7 @@ class GameOverScreen {
 
     constructor(pearWagon: IGameState) {
         this.pearWagon = pearWagon;
-        this.playAgain = new Button(innerWidth / 2, innerHeight / 2, 300, 150,  "limegreen");
+        this.playAgain = new Button(innerWidth / 2, innerHeight / 2, 300, 150, "rgb(16, 168, 21)");
         let score = (getItem('points') || []) as string[];
         this.scoreList = score.map(point => Number(point));
     }

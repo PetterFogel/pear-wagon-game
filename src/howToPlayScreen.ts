@@ -4,7 +4,7 @@ class HowToPlayScreen {
 
     constructor(pearWagon: IGameState) {
         this.pearWagon = pearWagon;
-        this.menuButton = new Button(0, 0, 300, 150, "rgb(9, 232, 18)");
+        this.menuButton = new Button(0, 0, 300, 150, "rgb(16, 168, 21)");
     }
 
     update() {

@@ -24,7 +24,7 @@ html, body, canvas {
     animation: flashing 3.5s infinite;
 }
 #p5_loading .a { animation-delay: 0s; }
-#p5_loading .b { animation-delay: .10s; }
+#p5_loading .b { animation-delay: 0.10s; }
 #p5_loading .c { animation-delay: 0.20s; }
 #p5_loading .d { animation-delay: 0.30s; }
 #p5_loading .e { animation-delay: 0.40s; }

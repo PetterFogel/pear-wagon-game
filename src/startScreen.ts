@@ -22,7 +22,7 @@ class StartScreen {
     }
 
     checkHighscore() {
-        let test = (getItem('points') || []) as string[];
+        let test = (getItem('points') || [0]) as string[];
         this.highScore = max(test.map(point => Number(point)));
     }
     

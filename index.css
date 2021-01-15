@@ -1,0 +1,41 @@
+html, body, canvas {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    background: black;
+}
+
+/* Loading screen */
+#p5_loading {
+    color: var(--neutral);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+#p5_loading h1 {
+    font-size: 7rem;
+    margin: 0;
+    color: white;
+}
+
+#p5_loading h1 span {
+    animation: flashing 3.5s infinite;
+}
+#p5_loading .a { animation-delay: 0s; }
+#p5_loading .b { animation-delay: .10s; }
+#p5_loading .c { animation-delay: 0.20s; }
+#p5_loading .d { animation-delay: 0.30s; }
+#p5_loading .e { animation-delay: 0.40s; }
+#p5_loading .f { animation-delay: 0.50s; }
+#p5_loading .g { animation-delay: 0.60s; }
+#p5_loading .h { animation-delay: 0.70s; }
+#p5_loading .i { animation-delay: 0.80s; }
+#p5_loading .j { animation-delay: 0.90s; }
+
+@keyframes flashing {
+    0% { color: var(--neutral); }
+    20% { color: var(--darkened); }
+    40%, 100% { color: var(--neutral); }
+}

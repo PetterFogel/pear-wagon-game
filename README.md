@@ -3,8 +3,8 @@
 
 **Pear Wagon**
 
-** A P5JS School projekt **
-** This is a game where you are supposed to catch pears **
+**A P5JS School projekt**
+**This is a game where you are supposed to catch pears**
 
 *documents-folder contains:*
     *relevant documents such as presentation and UML-diagram*
@@ -14,11 +14,11 @@
 
 We tried the game with noCursor() on playscreen, but the controls got bad when the cursor goes out of screen.
 
-** To get ready clone down and type:  **
-** "npm i"  **
-** "npm start"  **
+To get ready clone down and type:  
+"npm i"  
+"npm start"  
   
-** Or just test it out on Netlify. **
+Or just test it out on Netlify.
  
 *Gruppmedlemmar*  
 Andreas Stanggren  
